@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+    <head>
+
+	<meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<script type="text/javascript" src="./css/JavaScript/jquery.min-dc5e7f18c8.js"></script>
+	<script type="text/javascript" src="./css/JavaScript/ipv4-subnet.js"></script>
+	<script type="text/javascript">$(document).ready(function () {$('#tabs div').hide();$('#tabs div:nth-child(3)').show();$('#tabs ul li:nth-child(1)').removeClass('active');$('#tabs ul li:nth-child(3)').removeClass('active');$('#tabs ul li:nth-child(2)').addClass('active');$('#tabs ul li a').click(function () { $('#tabs ul li').removeClass('active');$(this).parent().addClass('active');var currentTab = $(this).attr('href');$('#tabs div').hide();$(currentTab).show();return false;});calculateAndUpdateValues('initialize', 'design');tableResize();$('#id_request_div').show();$('#id_response_div').hide();$('.tabcontent').hide();$('#view1').show();$('#tab1').attr('checked', true);});function tableResize() {$('#newDiv').addClass('table-responsive');$('#newtable').addClass('table mb-0');$("#newtable").find('td').addClass('text-center');$('.col-sm').css('overflow-wrap', 'anywhere');}</script>
+
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="website icon" href="css/fix-photo/info_icon.jpg">
+        <script src="css/JavaScript/navbar.js"></script>
+		<script src="css/JavaScript/search.js"></script>
+		<script>
+            document.onkeydown = function (e) {
+                if (event.keyCode == 123) {
+                    return false;
+                }
+                if (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'i'.charCodeAt(0))) {
+                    return false;
+                }
+                if (e.ctrlKey && e.shiftKey && (e.keyCode == 'C'.charCodeAt(0) || e.keyCode == 'c'.charCodeAt(0))) {
+                    return false;
+                }
+                if (e.ctrlKey && e.shiftKey && (e.keyCode == 'J'.charCodeAt(0) || e.keyCode == 'j'.charCodeAt(0))) {
+                    return false;
+                }
+                if (e.ctrlKey && (e.keyCode == 'U'.charCodeAt(0) || e.keyCode == 'u'.charCodeAt(0))) {
+                    return false;
+                }
+                if (e.ctrlKey && (e.keyCode == 'S'.charCodeAt(0) || e.keyCode == 's'.charCodeAt(0))) {
+                    return false;
+                }
+            }
+        </script>
+
+	<title>Tananyagok - Hálózat</title>
+
+    </head>
+
+
+    <body class="text-dark" id="halozat" oncontextmenu="return false;">
+
+	<nav class="navbar navbar-expand-md navbar-dark fixed-top">
+            <div class="collapse navbar-collapse container-fluid" >
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Főoldal</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Tantárgyak</a>
+                            <ul class="dropdown-menu dropdown-menu-dark scrollable-menu">
+                                <li><a class="dropdown-item" href="töri.html">Történelem</a></li>
+                                <li><a class="dropdown-item" href="fizika.html">Fizika</a></li>
+                                <li><a class="dropdown-item" href="matek.html">Matek</a></li>
+                                <li><a class="dropdown-item disabled" href="hálózat.html">Hálózat</a></li>
+                                <li><a class="dropdown-item" href="hálózatelmélet.html">Hálózat elmélet</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Programozási nyelvek</a>
+                            <ul class="dropdown-menu dropdown-menu-dark scrollable-menu">
+                                <li><a class="dropdown-item disabled" href="php.html">PHP</a></li>
+                                <li><a class="dropdown-item" href="html.html">HTML</a></li>
+                                <li><a class="dropdown-item" href="css.html">CSS</a></li>
+                                <li><a class="dropdown-item disabled" href="javascript.html">JavaScript</a></li>
+                                <li><a class="dropdown-item" href="python.html">Python</a></li>
+                                <li><a class="dropdown-item disabled" href="java.html">Java</a></li>
+                                <li><a class="dropdown-item disabled" href="c.html">C</a></li>
+                                <li><a class="dropdown-item disabled" href="c#.html">C#</a></li>
+                                <li><a class="dropdown-item disabled" href="c++.html">C++</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="git.html">Git</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="mysql.html">MySQL</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="mongodb.html">MongoDB</a>
+                    </ul>
+                </div>
+                <input type="search" onkeypress="Search()" placeholder="Keresés" id="keres">
+            </div>
+        </nav>
+
+		<div class="container backgrund">
+
+			<h1>IP cím számoló</h1>
+			<div id="temp-body">
+				<section class="tools-hero-section">
+					<form action="javascript:void(0);">
+						<div class="multi-fields style-2">
+							<div class="form-group">
+								<label><b><u>IP cím és maszk</u></b></label>
+								<input type="text" onchange="calculateAndUpdateValues(&#39;setAddressBlock&#39;, &#39;design&#39;);tableResize();" id="addressBlock" class="form-control" autocorrect="off" autocapitalize="none">
+							</div>
+							<div class="form-group select-field">
+								<label><b><u>Maszk</u></b></label>
+								<select class="form-control" onchange="calculateAndUpdateValues(&#39;setSubnetMask&#39;, &#39;design&#39;);tableResize();" id="subnetMask">
+									<option value="255.0.0.0">255.0.0.0/8</option>
+									<option value="255.128.0.0">255.128.0.0/9</option>
+									<option value="255.192.0.0">255.192.0.0/10</option>
+									<option value="255.224.0.0">255.224.0.0/11</option>
+									<option value="255.240.0.0">255.240.0.0/12</option>
+									<option value="255.248.0.0">255.248.0.0/13</option>
+									<option value="255.252.0.0">255.252.0.0/14</option>
+									<option value="255.254.0.0">255.254.0.0/15</option>
+									<option value="255.255.0.0">255.255.0.0/16</option>
+									<option value="255.255.128.0">255.255.128.0/17</option>
+									<option value="255.255.192.0">255.255.192.0/18</option>
+									<option value="255.255.224.0">255.255.224.0/19</option>
+									<option value="255.255.240.0">255.255.240.0/20</option>
+									<option value="255.255.248.0">255.255.248.0/21</option>
+									<option value="255.255.252.0">255.255.252.0/22</option>
+									<option value="255.255.254.0">255.255.254.0/23</option>
+									<option value="255.255.255.0">255.255.255.0/24</option>
+									<option value="255.255.255.128">255.255.255.128/25</option>
+									<option value="255.255.255.192">255.255.255.192/26</option>
+									<option value="255.255.255.224">255.255.255.224/27</option>
+									<option value="255.255.255.240">255.255.255.240/28</option>
+									<option value="255.255.255.248">255.255.255.248/29</option>
+									<option value="255.255.255.252">255.255.255.252/30</option>
+									<option value="255.255.255.254">255.255.255.254/31</option>
+									<option value="255.255.255.255">255.255.255.255/32</option>
+								</select>
+							</div>
+							<div class="form-group select-field">
+								<label><b><u>Hostok száma</u></b></label>
+								<select class="form-control" onchange="calculateAndUpdateValues(&#39;setNoOfHosts&#39;, &#39;design&#39;);tableResize();" id="hostBits">
+									<option value="0">1</option>
+									<option value="1">2</option>
+									<option value="2">4</option>
+									<option value="3">8</option>
+									<option value="4">16</option>
+									<option value="5">32</option>
+									<option value="6">64</option>
+									<option value="7">128</option>
+									<option value="8">256</option>
+									<option value="9">512</option>
+									<option value="10">1024</option>
+									<option value="11">2048</option>
+									<option value="12">4096</option>
+									<option value="13">8192</option>
+									<option value="14">16384</option>
+									<option value="15">32768</option>
+									<option value="16">65536</option>
+									<option value="17">131072</option>
+									<option value="18">262144</option>
+									<option value="19">524288</option>
+									<option value="20">1048576</option>
+									<option value="21">2097152</option>
+									<option value="22">4194304</option>
+									<option value="23">8388608</option>
+									<option value="24">16777216</option>
+								</select>
+							</div>
+							<div class="form-group select-field min-field">
+								<label><b><u>Alhálózatok száma</u></b></label>
+								<select class="form-control" onchange="calculateAndUpdateValues(&#39;setNoOfSubnets&#39;, &#39;design&#39;);tableResize();" id="subnetBits">
+									<option value="0">1</option>
+									<option value="1">2</option>
+									<option value="2">4</option>
+									<option value="3">8</option>
+									<option value="4">16</option>
+									<option value="5">32</option>
+									<option value="6">64</option>
+									<option value="7">128</option>
+									<option value="8">256</option>
+									<option value="9">512</option>
+									<option value="10">1024</option>
+									<option value="11">2048</option>
+									<option value="12">4096</option>
+									<option value="13">8192</option>
+									<option value="14">16384</option>
+									<option value="15">32768</option>
+									<option value="16">65536</option>
+									<option value="17">131072</option>
+									<option value="18">262144</option>
+									<option value="19">524288</option>
+									<option value="20">1048576</option>
+									<option value="21">2097152</option>
+									<option value="22">4194304</option>
+									<option value="23">8388608</option>
+									<option value="24">16777216</option>
+								</select>
+							</div>
+						</div>
+						
+			<hr>								
+										
+						<div class="multi-fields style-2">
+							<div class="form-group"><label><b><u>Hálózat</u></b></label>
+								<input type="text" class="form-control" readonly="" id="cidrNotation_in" autocorrect="off" autocapitalize="none">
+							</div>
+							<div class="form-group"><label><b><u>Első és utolsó cím</u></b></label>
+								<input type="text" class="form-control" readonly="" id="addressRange_cidr_in" autocorrect="off" autocapitalize="none">
+							</div>
+							<div class="form-group"><label><b><u>Szórási cím</u></b></label>
+								<input type="text" class="form-control" readonly="" id="broadcast_cidr_in" autocorrect="off" autocapitalize="none">
+							</div>
+							<div class="form-group min-field"><label><b><u>Wildcard Mask</u></b></label>
+								<input type="text" class="form-control" readonly="" id="wildcard_cidr_in" autocorrect="off" autocapitalize="none">
+							</div>
+						</div>
+					</form>
+				</section>
+				<section class="com-section pb-0 " id="SubnetDetailsDiv" style="display: block;">
+				<h3>Alhálózatok</h3>
+					<div class="table-responsive" style="background-color: white; border-radius: 10px;">
+						<div id="tableDiv" style="display: block;">
+							<div id="newDiv" class="table-responsive">
+								<table id="newtable" class="table table-bordered table-stripped mb-0">
+									<tbody>
+										<tr class="sticky-header">
+											<td class="bg-banner-solid--blue text-center">Subnet ID</td>
+											<td class="bg-banner-solid--blue text-center">Subnet Address</td>
+											<td class="bg-banner-solid--blue text-center">Host Address Range</td>
+											<td class="bg-banner-solid--blue text-center">Broadcast Address</td>
+										</tr>
+										<tr>
+											<td class="dynamicTableCell text-center">1</td>
+											<td class="dynamicTableCell text-center">10.0.0.0</td>
+											<td class="dynamicTableCell text-center">10.0.0.1 - 10.255.255.254</td>
+											<td class="dynamicTableCell text-center">10.255.255.255</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</section>
+				<br>
+
+				<h1>Hálózat parancsok</h1>
+
+					<h3>(config)#:</h3>
+
+						<h5>Elnevezés:</h5>
+							<section class="text">
+								<p>Router(config)# hostname {név}</p>
+							</section>
+							
+						<h5>Ellenőrzés kikerülése:</h5>
+							<section class="text">
+								<p>Router(config)# no ip domain-lookup</p>
+							</section>
+							
+						<h5>Jelszavak:</h5>
+
+							<h6>-belépési jelszó</h6>
+							<section class="text">
+								<p>Router(config)# enable password {jelszó} </p>
+							</section>
+
+							<h6>-config jelszó</h6>
+							<section class="text">
+								<p>Router(config)# enable secret {jelszó}</p>
+							</section>
+
+							<h6>-telnet vonal jelszó</h6>
+							<section class="text">
+								<p>Router(config)# line vty 0 15</p>
+								<p>Router(config-line)# password {jelszó}</p>
+								<p>Router(config-line)# login</p>
+							</section>
+
+							<h6>-konzol vonal jelszó</h6>
+							<section class="text">
+								<p>Router(config)# line console 0</p>
+								<p>Router(config-line)# password {jelszó}</p>
+								<p>Router(config-line)# login</p>
+							</section>
+
+							<h6>-jelszavak titkosítása</h6>
+							<section class="text">
+								<p>Router(config)# service password-encryption</p>
+							</section>
+
+							<h6>-üdvözlő szöveg:</h6>
+							<section class="text">
+								<p>Router(config)# banner motd "{szöveg}"</p>
+							</section>
+
+						<h5>Router:</h5>
+
+							<h6>-IPv4 cím</h6>
+							<section class="text">
+								<p>Router(config)# interface {interface neve}</p>
+								<p>Router(config-if)# ip address {IP cím} {maszk}</p>
+								<p>Router(config-if)# no shutdown</p>
+								<p>Router(config-if)# description {leírás}</p>
+							</section>
+
+							<h6>-DHCP</h6>
+							<section class="text">
+								<p>Router(config)# ip dhcp pool {elnevezés}</p>
+								<p>Router(dhcp-config)# network {IP cím} {maszk}</p>
+								<p>Router(dhcp-config)# default-router {IP cím}</p>
+								<p>Router(dhcp-config)# dns-server {IP cím}</p>
+								<p>Router(config)# ip dhcp excluded-address {kezdő IP} {vég IP}</p>
+							</section>
+
+							<h6>-DHCP kikapcsolása</h6>
+							<section class="text">
+								<p>Router(config)# no service dhcp</p>
+							</section>
+
+							<h6>-DHCP bekapcsolása</h6>
+							<section class="text">
+								<p>Router(config)# service dhcp</p>
+							</section>
+							
+							<h6>-DHCP Relay</h6>
+							<section class="text">
+								<p>Router(config)# interface {interface neve}</p>
+								<p>Router(config-if)# ip helper-address {szerver cím}</p>
+							</section>
+
+							<h6>-forgalomirányítás (ip route)</h6>
+							<section class="text">
+								<p>Router(config)# ip route {nem látott hálózat {IP cím} + {maszk}} {másik bemenő interface IP}</p>
+							</section>
+							
+							<h6>-forgalomirányítás (OSPF)</h6>
+							<section class="text">
+								<p>Router(config)# passive-interface {nem router felé néző interface neve}</p>
+								<p>Router(config)# router OSPF {folyamatazonosító}</p>
+								<p>Router(config-router)# network {hálózat lábánál {IP cím} {inverz maszk}} area 0</p>
+								<p style="margin-top: 40px;">Router(config-router)# default-information originate</p>
+								<p>Router(config-router)# ip nat inside static {mit IP} {mire IP}</p>
+							</section>
+							
+							<h6>-forgalomirányítás (RIP)</h6>
+							<section class="text">
+								<p>Router(config)# passive-interface {nem router felé néző interface neve}</p>
+								<p>Router(config)# router rip</p>
+								<p>Router(config-router)# version 2</p>
+								<p>Router(config-router)# network {hálózat lábánál {IP cím}}</p>
+								<p style="margin-top: 40px;">Router(config-router)# default-information originate</p>
+								<p>Router(config-router)# ip nat inside static {mit IP} {mire IP}</p>
+							</section>
+							
+							<h6>-statikus NAT</h6>
+							<section class="text">
+								<p>Router(config)# interface {interface}</p>
+								<p>Router(config-if)# ip nat outside</p>
+								<p>Router(config-if)# interface {interface}</p>
+								<p>Router(config-if)# ip nat inside</p>
+							</section>
+		
+							<h6>-subinterface</h6>
+							<section class="text">
+								<p>Router(config)# interface {interface név}.{vlan szám}</p>
+								<p>Router(config-subif)# encapsulation dotlq {vlan szám}</p>
+							</section>
+
+								
+							<h6>-IPv6 cím</h6>
+							<section class="text">
+								<p>Router(config)# interface {interface neve}</p>
+								<p>Router(config-if)# ipv6 address {IPv6 cím}/{maszk}</p>
+								<p>Router(config-if)# ipv6 address {link-local cím} link-local</p>
+								<p>Router(config-if)# no shutdown</p>
+								<p>Router(config-if)# description {leírás}</p>
+							</section>
+								
+							<h6>-SLAAC</h6>
+							<section class="text">
+								<p>Router(config)# interface {interface neve}</p>
+								<p>Router(config)# ipv6 enable</p>
+								<p>Router(config)# ipv6 address dhcp</p>
+								<p>Router(config)# ipv6 address autoconfig</p>
+							</section>
+
+							<h6>-IPv6 cím (statefull)</h6>
+							<section class="text">
+								<p>Router(config)# ipv6 unicast-routing</p>
+								<p>Router(config)# ipv6 dhcp pool {név}</p>
+								<p>Router(config-dhcpv6)# adress prefix {ipv6 hálózat cím}/{maszk}</p>
+								<p>Router(config-dhcpv6)# domain-name {domain}</p>
+								<p>Router(config-dhcpv6)# dns {ipv6 cím}</p>
+								<p>Router(config-dhcpv6)# interface {interface név}</p>
+								<p>Router(config-if)# ipv6 nd managed-config-flag</p>
+								<p>Router(config-if)# ipv6 dhcp server {dhcp pool név}</p>
+							</section>
+
+							<h6>-IPv6 cím (stateless)</h6>
+							<section class="text">
+								<p>Router(config)# ipv6 unicast-routing</p>
+								<p>Router(config)# ipv6 dhcp pool {név}</p>
+								<p>Router(config-dhcpv6)# domain-name {domain}</p>
+								<p>Router(config-dhcpv6)# dns {ipv6 cím}</p>
+								<p>Router(config-dhcpv6)# interface {interface név}</p>
+								<p>Router(config-if)# ipv6 nd other-config-flag</p>
+								<p>Router(config-if)# ipv6 dhcp server {dhcp pool név}</p>
+							</section>
+								
+							<h6>-IPv6 forgalomirányítás (ip route)</h6>
+							<section class="text">
+								<p>Router(config)# ipv6 route {nem látott hálózat IP cím}/{maszk} {másik bemenő interface IP}</p>
+							</section>
+
+							<h6>-IPv6 forgalomirányítás (OSPF)</h6>
+							<section class="text">
+								<p>Router(config)# ipv6 router ospf {id}</p>
+								<p>Router(config-rtr)# router-id {ipv4 cím}</p>
+								<p>Router(config-rtr)# interface {interface név}</p>
+								<p>Router(config-if)# ipv6 ospf {id} area {szám}</p>
+							</section>
+					
+						<h5>Switch:</h5>
+							<h6>-IP cím adás</h6>
+							<section class="text">
+								<p>Switch(config)# interface vlan {vlan szám}</p>
+								<p>Switch(config-if)# ip address {IP cím} {maszk}</p>
+								<p>Switch(config-if)# ipv6 address {IPv6 cím}/{maszk}</p>
+								<p>Switch(config-if)# no shutdown</p>
+								<p>Switch(config)# ip default-gateway {router IP cím}</p>
+							</section>
+
+							<h6>-SSH</h6>
+							<section class="text">
+								<p>Switch(config)# username {felhasználó név} privilege 15 password {jelszó}</p>
+								<p>Switch(config)# hostname {elnevezés}</p>
+								<p>Switch(config)# ip domain-name {név.com}</p>
+								<p>Switch(config)# crypto key generate rsa</p>
+								<p>Switch(config)# How many bits: 0-2048</p>
+								<p>Switch(config)# ip ssh version {verzió szám}</p>
+								<p>Switch(config)# line vty 0 15</p>
+								<p>Switch(config-line)# transport input ssh</p>
+								<p>Switch(config-line)# login local</p>
+							</section>
+
+							<h6>-Vlanok létrehozása</h6>
+							<section class="text">
+								<p>Switch(config)# vlan {vlan szám}</p>
+								<p>Switch(config-vlan)# name {vlan név}</p>
+
+								<p style="margin-top: 40px;">Switch(config)# interface {interface név}</p>
+								<p>Switch(config-if)# switchport mode access</p>
+								<p>Switch(config-if)# switchport access vlan {vlan szám}</p>
+
+								<p style="margin-top: 40px;">Switch(config)# interface {interface név}</p>
+								<p>Switch(config-if)# switchport mode trunk</p>
+								<p>Switch(config-if)# switchport trunk allowed vlan {vlan szám},{vlan szám}</p>
+							</section>
+
+							<h6>-Vlan voice</h6>
+							<section class="text">
+								<p>Switch(config)# interface {interface név}</p>
+								<p>Switch(config-if)# switchport voice vlan {vlan szám}</p>
+								<p>Switch(config-if)# mls qos trust cos</p>
+							</section>
+
+							<h6>-Vlan native</h6>
+							<section class="text">
+								<p>Switch(config)# interface {interface név}</p>
+								<p>Switch(config-if)# switchport trunk nativce vlan {vlan szám}</p>
+							</section>
+
+							<h6>-STP protokoll</h6>
+							<section class="text">
+								<p>Switch(config)# spanning-tree vlan {vlan szám} priority {prioritásszám}</p>
+							</section>
+
+							<h6>-RSTP protokoll</h6>
+							<section class="text">
+								<p>Switch(config)# spanning-tree mode pvst</p>
+								<p>vagy</p>
+								<p>Switch(config)# spanning-tree mode rapid pvst</p>
+							</section>
+
+							<h6>-EtherChannel</h6>
+							<section class="text">
+								<p>Switch(config)# interface range {port név}</p>
+								<p>Switch(config-if-range)# shutdown</p>
+								<p>Switch(config-if-range)# channel-group {group szám} mode {mód}</p>
+								<p>Switch(config-if-range)# no shutdown</p>
+								<p>Switch(config-if-range)# interface port-channel {group szám}</p>
+								<p>Switch(config-if)# switchport mode trunk</p>
+							</section>
+
+					<section class="text">
+					<h6>PC:</h6>
+					<p>-IP cím adás</p>
+						<ul style="padding-left: 6%;">
+							<li>IP cím: {IP cím}</li>
+							<li>Maszk: {Maszk}</li>
+							<li>Default gateway: {Alapértelmezett átjáró IP címe}</li>
+						</ul>
+					<p>-DHCP</p>
+						<ul style="padding-left: 6%;">
+							<li>Routernél beállított alapján</li>
+						</ul>
+					</section>
+
+					<section class="text">
+					<h6>Server:</h6>
+					<p style="padding-left: 2%;">A Servereken a SERVICES fülön lehet állítani.</p>
+					<p>-WEB</p>
+					<p style="padding-left: 2%;">Be kell kapcsolni és lehet változtatni a tartalmát a weboldalnak.
+					<br>Vagy URL vagy IP címmel lehet csatlakozni a PC "Web browser" alkalmazásával.</p>
+
+					<p>-DNS</p>
+					<p style="padding-left: 2%;">Meg kell adni a Name: {URL} és egy Address: {IP cím}, valamint bekapcsolni.</p>
+
+					<p>-FTP</p>
+					<p style="padding-left: 2%;">Az FTP serveren meg kell adni a felhasználó nevét, jelszavát és jogosultságait.
+					<br>Egy gép consolejából kell az "ftp {URL/IP}" paranccsal csatlakozni majd bejelentkezni.</p>
+					<p>A parancsok:</p>
+						<ul style="padding-left: 6%;">
+							<li>dir: listázás</li>
+							<li>put: feltöltés</li>
+							<li>get: letöltés</li>
+							<li>delete: törlés</li>
+							<li>quit: kilépés</li>
+							<li>rename: átnevezés</li>
+						</ul>
+
+					<p>-E-mail</p>
+					<p style="padding-left: 2%;">Meg kell adni a Domain nevét.
+					<br>Ez után hozzá lehet adni felhasználóneveket jelszóval.
+					<br>A PC-n az "Email" alkalmazásban a "Configure mail" opciónál be kell állítani a
+					<ul style="padding-left: 6%;">
+						<li>Your name: {neved}</li>
+						<li>Email address: {valami}@{domain név}</li>
+						<li>Incoming Mail Server: {URL/IP}</li>
+						<li>Outgoing Mail Server: {URL/IP}</li>
+						<li>User name: {felhasználónév}</li>
+						<li>Password: {jelszó}</li>
+					</ul>
+					<p style="padding-left: 2%;">Ha kész akkor a PC "Email" alkalmazásába üzenetet lehet küldeni a {másik felhasználó}@{domain név} számára.</p>
+
+					<p>-DHCP</p>
+					<p style="padding-left: 2%;">A hálózat gépeihez automatikusan ad IP címet.</p>
+					<ul style="padding-left: 6%;">
+						<li>Pool name: {dhcp neve}</li>
+						<li>Default Gateway: {router IP cím}</li>
+						<li>DNS Server: {dns IP címe}</li>
+						<li>Start IP Address: {IP cím}</li>
+						<li>Subnet Mask: {Maszk}</li>
+						<li>Maximum Number of Users: {Max. felhasználók száma}</li>
+					</ul>
+					</section>
+
+
+					<h3>#:</h3>
+
+					<section class="text">
+					<h6>Mentés:</h6>
+					<p>-configuráció mentése</p>
+						<ul style="padding-left: 6%;">
+							<li>copy running-config startup-config</li>
+							<li>write</li>
+							<li>do write</li>
+						</ul>
+					<p>-flash mentése</p>
+					    <ul style="padding-left: 6%;">
+							<li>copy flash tftp</li>
+						</ul>
+					</section>
+
+					<section class="text">
+					<h6>Config:</h6>
+					<p>-futó</p>
+						<ul style="padding-left: 6%;">
+							<li>show running-config</li>
+						</ul>
+					<p>-mentett</p>
+						<ul style="padding-left: 6%;">
+							<li>show startup-config</li>
+						</ul>
+					<p>-flash</p>
+					    <ul style="padding-left: 6%;">
+							<li>show flash</li>
+						</ul>
+					<p>-interfacek</p>
+						<ul style="padding-left: 6%;">
+							<li>show interfaces {interface neve}</li>
+						</ul>
+						<ul style="padding-left: 6%;">
+							<li>show interfaces {interface neve} switchport</li>
+						</ul>
+					<p>-mac címtábla</p>
+						<ul style="padding-left: 6%;">
+							<li>show arp</li>
+							<li>show mac-address-table</li>
+						</ul>
+					<p>-ip route</p>
+						<ul style="padding-left: 6%;">
+							<li>show ip route</li>
+						</ul>
+						<p>C: közvetlenül
+						<br>S: statikus útvonal
+						<br>O: ospf útvonal</p>
+					<p>-vlan</p>
+						<ul style="padding-left: 6%;">
+							<li>show vlan brief</li>
+							<li>show spanning-tree</li>
+						</ul>
+					<p>-DTP</p>
+						<ul style="padding-left: 6%;">
+							<li>show DTP interface {interface neve}</li>
+						</ul>
+					</section>
+
+					<section class="text">
+					<h6>Idő beállítás:</h6>
+						<ul style="padding-left: 6%;">
+							<li>clock set {idő}</li>
+						</ul>
+					</section>
+
+		</div>
+
+	</body>
+
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-euiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="website icon" href="css/fix-photo/icon.png">
+    <script src="css/JavaScript/navbar.js"></script>
+    <script>
+        document.onkeydown = function (e) {
+            if (event.keyCode == 123) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'i'.charCodeAt(0))) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && (e.keyCode == 'C'.charCodeAt(0) || e.keyCode == 'c'.charCodeAt(0))) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && (e.keyCode == 'J'.charCodeAt(0) || e.keyCode == 'j'.charCodeAt(0))) {
+                return false;
+            }
+            if (e.ctrlKey && (e.keyCode == 'U'.charCodeAt(0) || e.keyCode == 'u'.charCodeAt(0))) {
+                return false;
+            }
+            if (e.ctrlKey && (e.keyCode == 'S'.charCodeAt(0) || e.keyCode == 's'.charCodeAt(0))) {
+                return false;
+            }
+        }
+    </script>
+    <script src="css/JavaScript/töri.js"></script>
+    <script src="css/JavaScript/search.js"></script>
+    <title>Tananyagok</title>
+
+</head>
+
+
+<body class="text-dark" id="tori" oncontextmenu="return false;">
+
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+        <div class="collapse navbar-collapse container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Főoldal</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Tantárgyak</a>
+                        <ul class="dropdown-menu dropdown-menu-dark scrollable-menu">
+                            <li><a class="dropdown-item disabled" href="töri.html">Történelem</a></li>
+                            <li><a class="dropdown-item" href="fizika.html">Fizika</a></li>
+                            <li><a class="dropdown-item" href="matek.html">Matek</a></li>
+                            <li><a class="dropdown-item" href="hálózat.html">Hálózat</a></li>
+                            <li><a class="dropdown-item" href="hálózatelmélet.html">Hálózat elmélet</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Programozási nyelvek</a>
+                        <ul class="dropdown-menu dropdown-menu-dark scrollable-menu">
+                            <li><a class="dropdown-item disabled" href="php.html">PHP</a></li>
+                            <li><a class="dropdown-item" href="html.html">HTML</a></li>
+                            <li><a class="dropdown-item" href="css.html">CSS</a></li>
+                            <li><a class="dropdown-item disabled" href="javascript.html">JavaScript</a></li>
+                            <li><a class="dropdown-item" href="python.html">Python</a></li>
+                            <li><a class="dropdown-item disabled" href="java.html">Java</a></li>
+                            <li><a class="dropdown-item disabled" href="c.html">C</a></li>
+                            <li><a class="dropdown-item disabled" href="c#.html">C#</a></li>
+                            <li><a class="dropdown-item disabled" href="c++.html">C++</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="git.html">Git</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="mysql.html">MySQL</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="mongodb.html">MongoDB</a>
+                </ul>
+            </div>
+            <input type="search" onkeypress="Search()" placeholder="Keresés" id="keres">
+        </div>
+    </nav>
+    <div class="container backgrund custom-select">
+
+        <select id="pdfselector" class="pdfselector" style="width: 90%; background-color: #232729; color: white;" width="20px" size="1">
+            <option value="1" id="opt1">Őskor</option>
+            <option value="2" id="opt2">A polisz születése</option>
+            <option value="3" id="opt3">Az athéni demokrácia</option>
+            <option value="4" id="opt4">A görög-perzsa háborúk</option>
+            <option value="5" id="opt5">A görög mitológia és istenek</option>
+            <option value="6" id="opt6">Róma városának alapítása és a királyság kora</option>
+            <option value="7" id="opt7">Az ókori Róma - A köztársaság kora</option>
+            <option value="10" id="opt10">Az ókori Róma - A Pun-Római háborúk</option>
+            <option value="8" id="opt8">Az ókori Róma - A köztársaság válsága</option>
+            <option value="9" id="opt9">Az ókori Róma - A polgárháborúk kora</option>
+            <option value="11" id="opt11">A kereszténység születése és egyházzá szerveződése</option>
+            <option value="12" id="opt12">A nagy népvándorlás kora</option>
+            <option value="13" id="opt13">Az iszlám vallás kialakulása és főbb tanításai</option>
+            <option value="14" id="opt14">Kalandozások és a magyar nép életmódja a X.században</option>
+            <option value="15" id="opt15">Géza fejedelem és Szent István király államalapító tevékenysége</option>
+            <option value="16" id="opt16">A Magyar Királyság első évszázada - Szent Istvántól I. Béláig</option>
+            <option value="17" id="opt17">A Magyar Királyság első évszázada - Salamontól Könyves Kálmánig</option>
+            <option value="18" id="opt18">Gazdaság és népesség a 12. századi Magyarországon III. Béla uralkodása (1172 — 1196)</option>
+            <option value="19" id="opt19">II. András uralkodása (1205 — 1235) és az aranybulla</option>
+            <option value="20" id="opt20">I. Károly (Róbert), a királyi hatalom helyreállítója</option>
+            <option value="21" id="opt21">A nagy földrajzi felfedezések és hatásuk</option>
+            <option value="26" id="opt26">A Jagelló-kor — a rendi monarchia válsága</option>
+            <option value="27" id="opt27">A mohácsi csata és következményei</option>
+            <option value="28" id="opt28">Várháborúk - A királyi Magyarország és a hódoltság</option>
+            <option value="22" id="opt22">A reformáció kibontakozása és hatásai</option>
+            <option value="29" id="opt29">A tizenötéves háború és a Bocskai szabadságharc 1591/93 - 1606</option>
+            <option value="23" id="opt23">A Habsburgok felemelkedése és a katolikus megújulás</option>
+            <option value="24" id="opt24">A franciák évszázada</option>
+            <option value="25" id="opt25">Az angol polgári forradalom 1640-1689</option>
+            <option value="30" id="opt30">A királyi Magyarország a 17. században</option>
+            <option value="31" id="opt31">A török kiűzése Magyarországról</option>
+            <option value="32" id="opt32">A Rákóczi-szabadságharc</option>
+            <option value="33" id="opt33">Mária Terézia uralkodása és II. József felvilágosult abszolutizmusa</option>
+            <option value="34" id="opt34">Felvilágosodás 17. század — 19. század eleje</option>
+            <option value="50" id="opt50">Az ipari forradalom</option>
+            <option value="44" id="opt44">Az Amerikai függetlenségi háború - 1775-1783</option>
+            <option value="45" id="opt45">Az Amerikai Egyesült Államok kialakulása</option>
+            <option value="35" id="opt35">A nagy francia forradalom 1789-1795</option>
+            <option value="36" id="opt36">A nagy francia forradalom vége és Napóleon uralma - l. RÉSZ</option>
+            <option value="37" id="opt37">A nagy francia forradalom vége és Napóleon uralma - II. RÉSZ</option>
+            <option value="38" id="opt38">A „reformkor” és előzményei - A magyar „jakobinus” mozgalom, a napóleoni háborúk és a nemzeti ébredés kora</option>
+            <option value="39" id="opt39">Reformkor</option>
+            <option value="40" id="opt40">AZ 1848-as forradalom</option>
+            <option value="41" id="opt41">Az 1848-49-es szabadságharc</option>
+            <option value="51" id="opt51">Megtorlás és önkényuralom Magyarországon az 1848/49 szabadságharc után</option>
+            <option value="42" id="opt42">Az ipari forradalom újabb hulláma (második Ipari Forradalom)</option>
+            <option value="43" id="opt43">Népesedési folyamatok és a polgári állam jellemzői</option>
+            <option value="46" id="opt46">A forradalmakat felváltó hatalmi politika</option>
+            <option value="47" id="opt47">Az Olasz egység megvalósulása</option>
+            <option value="48" id="opt48">A német egység létrejötte</option>
+            <option value="52" id="opt52">A gyarmatosítás folyamata</option>
+            <option value="49" id="opt49">Szövetségi rendszerek az I. Világháború előtt</option>
+            <option value="53" id="opt53">Az egyenlőtlen fejlődés - Az Antant létrejötte</option>
+            <option value="54" id="opt54">Magyarország a dualizmus korában</option>
+            <option value="55" id="opt55">A fiatal főváros a gyorsan épülő Budapest</option>
+            <option value="56" id="opt56">Az első világháborút lezáró békeszerződések</option>
+            <option value="57" id="opt57">Magyarország az első világháborúban</option>
+            <option value="58" id="opt58">A tanácsköztársaság 133 napja</option>
+            <option value="59" id="opt59">Az ellenforradalom</option>
+            <option value="60" id="opt60">A trianoni békediktátum</option>
+            <option value="61" id="opt61">Az olasz fasizmus és a tekintélyuralmi rendszerek</option>
+            <option value="62" id="opt62">A világforradalom bűvöletében</option>
+            <option value="63" id="opt63">A bolsevik Oroszország és a Sztálini diktatúra</option>
+            <option value="64" id="opt64">A nácizmus Németországban</option>
+            <option value="65" id="opt65">A bethleni konszolidáció</option>
+            <option value="68" id="opt68">A II. világháború 1939 – 1945 Magyarország a II.VH-ban</option>
+            <option value="66" id="opt66">A II. világháború 1939 - 1945 I. rész</option>
+            <option value="67" id="opt67">A II. világháború 1939 – 1945 II. rész</option>
+            <option value="69" id="opt69">A II. világháború 1939 – 1945 III. rész</option>
+            <option value="70" id="opt70">A II. világháború 1939 – 1945 V. rész</option>
+            <option value="71" id="opt71">A II. világháború 1939 – 1945 VI. rész</option>
+            <option value="72" id="opt72">Holokauszt</option>
+        </select>
+        <button type="button" onclick="load()">Kiválasztás</button>
+        <span id="pdfek"></span>
+        
+        <h3>Forráselemzés</h3>
+            <h6>Kérdések:</h6>
+                <ul class="in">
+                    <li>Miért?</li>
+                    <li>Mit?</li>
+                    <li>Ki?</li>
+                    <li>Kinek?</li>
+                </ul>
+            <h6>Szerkezet:</h6>
+                <ul class="in">
+                    <li>ugyanaz a források témája</li>
+                    <li>saját tudás közé kell beépíteni</li>
+                    <li>ha elkezdjük a forrást elemezni, akkor fejezzük be</li>
+                </ul>
+
+    </div>
+</body>
+
+</html>

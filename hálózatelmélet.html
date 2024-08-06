@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="website icon" href="css/fix-photo/info_icon.jpg">
+        <script src="css/JavaScript/navbar.js"></script>
+        <script src="css/JavaScript/search.js"></script>
+        <script>
+            document.onkeydown = function (e) {
+                if (event.keyCode == 123) {
+                    return false;
+                }
+                if (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'i'.charCodeAt(0))) {
+                    return false;
+                }
+                if (e.ctrlKey && e.shiftKey && (e.keyCode == 'C'.charCodeAt(0) || e.keyCode == 'c'.charCodeAt(0))) {
+                    return false;
+                }
+                if (e.ctrlKey && e.shiftKey && (e.keyCode == 'J'.charCodeAt(0) || e.keyCode == 'j'.charCodeAt(0))) {
+                    return false;
+                }
+                if (e.ctrlKey && (e.keyCode == 'U'.charCodeAt(0) || e.keyCode == 'u'.charCodeAt(0))) {
+                    return false;
+                }
+                if (e.ctrlKey && (e.keyCode == 'S'.charCodeAt(0) || e.keyCode == 's'.charCodeAt(0))) {
+                    return false;
+                }
+            }
+        </script>
+        
+        <title>Tananyagok - Hálózat elmélet</title>
+
+    </head>
+
+
+    <body class="text-dark" id="halozatelmelet" oncontextmenu="return false;">
+
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+            <div class="collapse navbar-collapse container-fluid" >
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Főoldal</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Tantárgyak</a>
+                            <ul class="dropdown-menu dropdown-menu-dark scrollable-menu">
+                                <li><a class="dropdown-item" href="töri.html">Történelem</a></li>
+                                <li><a class="dropdown-item" href="fizika.html">Fizika</a></li>
+                                <li><a class="dropdown-item" href="matek.html">Matek</a></li>
+                                <li><a class="dropdown-item" href="hálózat.html">Hálózat</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Hálózat elmélet</a>
+                            <ul class="dropdown-menu dropdown-menu-dark scrollable-menu">
+                                <li>
+                                    <a class="dropdown-item" href="#szallitasireteg">Szállítási réteg</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Programozási nyelvek</a>
+                            <ul class="dropdown-menu dropdown-menu-dark scrollable-menu">
+                                <li><a class="dropdown-item disabled" href="php.html">PHP</a></li>
+                                <li><a class="dropdown-item" href="html.html">HTML</a></li>
+                                <li><a class="dropdown-item" href="css.html">CSS</a></li>
+                                <li><a class="dropdown-item disabled" href="javascript.html">JavaScript</a></li>
+                                <li><a class="dropdown-item" href="python.html">Python</a></li>
+                                <li><a class="dropdown-item disabled" href="java.html">Java</a></li>
+                                <li><a class="dropdown-item disabled" href="c.html">C</a></li>
+                                <li><a class="dropdown-item disabled" href="c#.html">C#</a></li>
+                                <li><a class="dropdown-item disabled" href="c++.html">C++</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="git.html">Git</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="mysql.html">MySQL</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="mongodb.html">MongoDB</a>
+                        </li>
+                    </ul>
+                </div>
+                <input type="search" onkeypress="Search()" placeholder="Keresés" id="keres">
+            </div>
+        </nav>
+
+        <div class="container backgrund">
+
+            <h1>Switching, Routing and Wireless Essentials</h1>
+
+                <h3>Alapbeállítások</h3>
+
+                    <h5>A switch LED jelzései</h5>
+                        <ol type="1" class="in">
+                            <li>SYST: Rendszer áramellátását jelzi:</li>
+                            <ul>
+                                <li>LED nem világít: nincs bekapcsolva</li>
+                                <li>LED zölden világít: megfelelően működik</li>
+                                <li>LED sárgán világít: áram alatt, nem működik</li>
+                            </ul>
+                            <li>RPS (Redundant Power System): RPS állapotát jelzi:</li>
+                            <ul>
+                                <li>LED nem világít: nincs bekapcsolva</li>
+                                <li>LED zölden világít: csatlakozatva van</li>
+                                <li>LED zölden villog: csatlakoztatva van, nem elérhető</li>
+                                <li>LED sárgán világít: készenléti üzemmód</li>
+                                <li>LED sárgán villog: switch tápegysége hibás</li>
+                            </ul>
+                            <li>STAT: Port státusz módja:</li>
+                            <ul>
+                                <li>LED nem világít: nincs kapcsolat</li>
+                                <li>LED zölden világít: van kapcsolat</li>
+                                <li>LED zölden villog: adatot küld vagy fogad</li>
+                                <li>LED sárgán világít: blokkolva van</li>
+                                <li>LED sárgán villog: tiltva van</li>
+                            </ul>
+                            <li>DUPLX: Duplex módot jelzi:</li>
+                            <ul>
+                                <li>LED nem világít: félduplex (half-duplex)</li>
+                                <li>LED zölden világít: teljes duplex (full-duplex)</li>
+                            </ul>
+                            <li>SPEED: Port sebesség módja:</li>
+                            <ul>
+                                <li>LED nem világít: 10 Mbps</li>
+                                <li>LED zölden világít: 100 Mbps</li>
+                                <li>LED zölden villog: 1000 Mbps</li>
+                            </ul>
+                            <li>PoE (Power over Ethernet): PoE módot jelzi:</li>
+                            <ul>
+                                <li>LED nem világít: nincs tápellátáshiány vagy -meghibásodás</li>
+                                <li>LED zölden világít: PoE mód ki van választva</li>
+                                <li>LED sárgán világít: PoE-hiba vagy tápellátáshiány</li>
+                            </ul>
+                        </ol>
+
+            <h1>Introduction to Networks</h1>
+
+                <h3>Hálózat átviteli közeg</h3>
+                    <p><b>Fémdrót kábel:</b> Elektromos impulzusokkal működik</p>
+                    <p><b>Üveg- vagy műanyag szálas kábel:</b> Fényvillanásokkal működik</p>
+                    <p><b>Vezeték nélküli:</b> Elektromágneses hullámokkal frekvencia alapon működik</p>
+                    
+                <h3>Felhőtípusok</h3>
+                    <p><b>Publikus felhő:</b> Mindenki elérheti. Fizetős vagy ingyenes.</p>
+                    <p><b>Privát felhő:</b> Adott szervezet vagy felhasználó érheti el. Létrehozása költséges.</p>
+                    <p><b>Hibrid felhő:</b> Több részből áll. Különböző hozzáférés.</p>
+                    <p><b>Közösségi felhő:</b> Adott szervezet érheti el. Szervezetre szabott.</p>
+
+                <h3>Biztonsági fenyegetések</h3>
+                    <p><b>Vírusok, férgek, trójai programok:</b> Rosszindulatú szoftver. Helyi eszközön fut.</p>
+                    <p><b>Kémprogram(spyware), reklámprogram(adware):</b> Információt gyűjt. Helyi eszközön fut.</p>
+                    <p><b>Nulladik napi(zero-day) támadás:</b> Biztonsági rés ismerté válásának napján megjelenő támadás.</p>
+                    <p><b>Személyes fenyegetés:</b> Személy felhasználói eszközt támad meg.</p>
+                    <p><b>Szolgáltatás-megtagadásos támadás:</b> Lelassít vagy elérhetetlenné tesz szolgálatokat vagy folyamatokat.</p>
+                    <p><b>Adatelhallgatás és -lopás:</b> Személyes adatot rögzít szervezet hálózatából.</p>
+                    <p><b>Személyazonosság-lopás:</b> Személy felhasználó adatait lopja el privát adatok hozzáféréséhez.</p>
+
+                <h3>Biztonsági megoldások</h3>
+                    <p><b>Vírus- és kémprogramkereső:</b> Megvédik az eszközt a kártékony szoftverektől.</p>
+                    <p><b>Tűzfal:</b> Blokkolja a jogosulatlan hozzáférést a rendszerhez.</p>
+                    <p><b>Dedikált tűzfalrendszerek:</b> Fejlettebb, részletesebb tűzfal beállítások.</p>
+                    <p><b>Hozzáférési listák(ACL):</b> IP-cím alapján szűr.</p>
+                    <p><b>Behatolás-megelőző rendszerek(IPS):</b> Azonosítjálk a gyorsan terjedő fenyegetést.</p>
+                    <p><b>Virtuális magánhálózatok(VPN):</b> Biztonságos hozzáférés távolról.</p>
+
+                <h3>Hozzáférési módok</h3>
+                    <p><b>Konzol:</b> Eszköz karbantartására létrehozott fizikai port.</p>
+                    <p><b>Secure Shell(SSH):</b> Virtuális interfacen keresztül paramcssoros kapcsolat.</p>
+                    <p><b>Telnet:</b> Nem biztonságos virtuális interface.</p>
+
+                <h3>Kommunikációs alapok</h3>
+                    <p><b>Az üzenet forrása (küldő, feladó):</b> Az üzenetek forrásai emberek vagy elektronikus eszközök, amelyeknek üzenetet kell küldeniük más személyeknek vagy eszközöknek.</p>
+                    <p><b>Az üzenet célja (címzett, fogadó):</b> A célállomás fogadja és értelmezi az üzenetet.</p>
+                    <p><b>Csatorna:</b> Az a közeg (média) alkotja, amely azt az utat biztosítja, amelyen az üzenetek haladnak a forrástól a célig.</p>
+
+                <h3>Üzenet időzítése</h3>
+                    <p><b>Adatfolyam-vezérlés (Flow Control):</b> Meghatározza, hogy mennyi információt és milyen sebességgel küldhetünk el.</p>
+                    <p><b>Válaszidő-túllépés (Response Timeout):</b> Ha a kérdésre nem jön válasz elfogadható időn belül, akkor annak megfelelően reagál.</p>
+                    <p><b>Hozzáférési mód (Access Method):</b> Meghatározza, hogy ki mikor küldhet üzenetet.</p>
+
+                <h3>Küldési módok</h3>
+                    <p><b>Unicast:</b> Egy eszköz számára küld üzenetet.</p>
+                    <p><b>Multicast:</b> Több eszköz számára küld üzenetet.</p>
+                    <p><b>Broadcast:</b> Minden eszköz számára küld üzenetet.</p>
+
+                <h3>Hálózati protokollok funkciói</h3>
+                    <img src="css/fix-photo/protokoll_function.png" alt="Protokoll funkciók" class="img-thumbnail" width="50%" style="max-width: 100%;">
+
+                <h3>Hálózati protokollok áttekintése</h3>
+                    <img src="css/fix-photo/halozat_protocoll.png" alt="Hákózati protokollok" class="img-thumbnail" width="50%" style="max-width: 100%;">
+
+                <h3>Protokollok együttműködése</h3>
+                    <p><b>Hypertext Transfer Protocol(HTTP):</b> Webszerver és kliens közti kommunikáció. Leírja a kérések és válaszok formáját és tartalmát.</p>
+                    <p><b>Transmission Control Protocol(TCP):</b> Egyedi párbeszédet hoz létre. Megbízható kézbesítést garantál és adatfolyam-vezérlést is biztosít.</p>
+                    <p><b>Internet Protocol(IP):</b> Üzenetek továbbítása a küldőtől a címzettig.</p>
+                    <p><b>Ethernet:</b> Azonos Ethernet LAN-on elhelyezkedő hálózati interface között továbbítja az üzenetet.</p>
+
+                <img src="css/fix-photo/UDP-TCP.png" alt="UDP-TCP" class="img-thumbnail">
+                
+        </div>
+
+    </body>
+
+</html>

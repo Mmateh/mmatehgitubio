@@ -1,0 +1,381 @@
+#hatter {
+    background-image: url(photo/spring.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#tori {
+    background-image: url(fix-photo/tori.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#fizika {
+    background-image: url(fix-photo/fizika.webp);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#matek {
+    background-image: url(fix-photo/matek.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#halozat {
+    background-image: url(fix-photo/halozat.webp);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#halozatelmelet {
+    background-image: url(fix-photo/halozatelmelet);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#git {
+    background-image: url(fix-photo/git.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#html {
+    background-image: url(fix-photo/html.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#css {
+    background-image: url(fix-photo/css.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#mysql {
+    background-image: url(fix-photo/mysql.webp);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#python {
+    background-image: url(fix-photo/python.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#gamehub {
+    background-image: url(fix-photo/gamehub.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+
+
+
+/*......Weboldal beállításai......*/
+
+/*Weboldal háttere*/
+.backgrund {
+    background-color: rgba(49, 51, 56, 0.97);
+    color: #f2f3f5;
+    padding-top: 60px;
+    border: black 1px solid;
+}
+/*Weboldal hátterének kerete*/
+.bg-secondary {
+    border: black 1px solid;
+}
+
+/*......Info odalak formázása......*/
+
+/*Parancsok*/
+.text {
+    background-color: #232729;
+    margin-left: 30px;
+    margin-right: 30px;
+    border: black solid 2px;
+}
+/*Parancsok betolása*/
+.be {
+    margin-left: 55px;
+}
+/*Példa*/
+.ex {
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    margin-top: 2px;
+    margin-bottom: 10px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+/*Képlet szövegének alap színe*/
+.com {
+    color: #dae44c;
+}
+/*Adatbázis színe*/
+.db {
+    color: #5BA4E0;
+}
+/*Python színe*/
+.py {
+    color: #e49400f5;
+}
+/*Python bekezdés 1tab*/
+.if {
+   padding-left: 20px; 
+}
+/*Python bekezdés 2tab*/
+.if_2 {
+    padding-left: 40px; 
+}
+/*Python bekezdés 3tab*/
+.if_3 {
+    padding-left: 60px;
+}
+/*Output*/
+.out {
+    background-color: #dfdfdf;
+    color: #000;
+    border-radius: 5px;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/*......Matek oldal formázása......*/
+
+/*Bekezdések*/
+.space {
+    padding-bottom: 25px;
+}
+
+
+/*......Töri oldal formázása......*/
+
+
+/**/
+.scrollable-menu {
+    height: auto;
+    max-height: 400px;
+    overflow-x: hidden;
+}
+
+.in {
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.row {
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.be1 {
+    margin-left: 20px;
+}
+
+.be2 {
+    margin-left: 40px;
+}
+
+.kep {
+    margin-top: 10px;
+    width: 300px;
+}
+
+.felso {
+    margin-top: 50px;
+}
+
+.smol {
+    margin-left: 0px;
+    padding-left: 0;
+    font-size: smaller;
+    color: #bfbfbf
+}
+
+.sorol {
+    padding-left: 30px;
+}
+
+.kond {
+    float: left;
+    margin: 10px;
+}
+/*Aláhúzás*/
+.unli {
+    border-bottom: #ffffff solid 1.5px;
+}
+/*Főlé vonal*/
+.upli {
+    border-top: #ffffff solid 1px;
+}
+/*......Navigációs sáv......*/
+/*Navigációs sáv alap beállításai*/
+.navbar {
+    background-color: #1e1f22;
+    color: #fff;
+    height: 50px;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: top 0.3s;
+}
+/*Navigációs sáv címei*/
+.navbar li {
+    height: 100%;
+    align-items: center;
+    margin: 0 10px;
+}
+/*Navigációs sáv felsorásai*/
+.navbar li a {
+    color: #fff;
+    text-decoration: none;
+    height: 100%;
+    align-items: center;
+    padding: 0 10px;
+}
+/*Navigációs sáv rejtett*/
+.navbar.hidden {
+    top: -50px;
+}
+/*Navigációs sáv színes*/
+.nav-link {
+    background-color: #1e1f22;
+}
+.dropdown-item {
+    background-color: #1e1f22;
+}
+.dropdown-menu-dark {
+    background-color: #1e1f22;
+}
+
+/**/
+.keret {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
+}
+/**/
+.keret iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.custom-select {
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+
+::placeholder {
+    text-align: right;
+    color: #bbbbbb;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    max-width: 90%;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+    border: #f2f3f5 2px solid;
+}
+
+h3 {
+    margin-top: 30px;
+    line-height: 40px;
+    border-radius: 7px;
+    background-color: #212529;
+    font-weight: bolder;
+    color: #6C757D;
+    padding: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+    text-align: center;
+}
+
+h5 {
+    color: rgb(155, 155, 155);
+    margin-left: 1%;
+    margin-top: 20px;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 27px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: underline rgb(104, 103, 103);
+}
+
+h6 {
+    margin-left: 2%;
+    font-size: 20px;
+    text-decoration: underline rgb(119, 119, 119);
+    color: #dadada;
+    font-weight: bolder;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+img {
+    margin: 10px;
+    margin-left: 3%;
+}
+
+section {
+    padding: 5px;
+    padding-top: 20px;
+    border-radius: 20px;
+}
+
+select {
+    margin-bottom: 20px;
+}
+
+input {
+    margin-bottom: 20px;
+}

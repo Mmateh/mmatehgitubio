@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="website icon" href="css/fix-photo/icon.png">
+        <script src="css/JavaScript/navbar.js"></script>
+        <script src="css/JavaScript/search.js"></script>
+        <script>
+            document.onkeydown = function (e) {
+                if (event.keyCode == 123) {
+                    return false;
+                }
+                if (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'i'.charCodeAt(0))) {
+                    return false;
+                }
+                if (e.ctrlKey && e.shiftKey && (e.keyCode == 'C'.charCodeAt(0) || e.keyCode == 'c'.charCodeAt(0))) {
+                    return false;
+                }
+                if (e.ctrlKey && e.shiftKey && (e.keyCode == 'J'.charCodeAt(0) || e.keyCode == 'j'.charCodeAt(0))) {
+                    return false;
+                }
+                if (e.ctrlKey && (e.keyCode == 'U'.charCodeAt(0) || e.keyCode == 'u'.charCodeAt(0))) {
+                    return false;
+                }
+                if (e.ctrlKey && (e.keyCode == 'S'.charCodeAt(0) || e.keyCode == 's'.charCodeAt(0))) {
+                    return false;
+                }
+            }
+        </script>
+        
+        <title>Tananyagok - Matek</title>
+
+    </head>
+
+
+    <body class="text-dark" id="matek" oncontextmenu="return false;">
+
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+            <div class="collapse navbar-collapse container-fluid" >
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Főoldal</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Tantárgyak</a>
+                            <ul class="dropdown-menu dropdown-menu-dark scrollable-menu">
+                                <li><a class="dropdown-item" href="töri.html">Történelem</a></li>
+                                <li><a class="dropdown-item" href="fizika.html">Fizika</a></li>
+                                <li><a class="dropdown-item" href="hálózat.html">Hálózat</a></li>
+                                <li><a class="dropdown-item" href="hálózatelmélet.html">Hálózat elmélet</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Matek</a>
+                            <ul class="dropdown-menu dropdown-menu-dark scrollable-menu" id="items">
+                                <li><a class="dropdown-item" href="#masodfoku_egyenlet">Másodfokú egyenlet képlet</a></li>
+                                <li><a class="dropdown-item" href="#trigonometria">Trigonometria</a></li>
+                                <li><a class="dropdown-item" href="#forgasszogek_szogfuggvenyei">Forgásszögek szögfüggvényei</a></li>
+                                <li><a class="dropdown-item" href="#kombinatorika">Kombinatorika</a></li>
+                                <li><a class="dropdown-item" href="#valoszinuseg_szamitas">Valószínűség számítás</a></li>
+                                <li><a class="dropdown-item" href="#statisztika">Statisztika</a></li>
+                                <li><a class="dropdown-item" href="#fuggvenyek_tulajdonsagai">Függvények tulajdonságai</a></li>
+                                <li><a class="dropdown-item" href="#nevezetes_azonossagok">Nevezetes azonosságok</a></li>
+                                <li><a class="dropdown-item" href="#egesz_kitevoju_hatvanyok">Egész kitevőjű hatványok, azonosságok</a></li>
+                                <li><a class="dropdown-item" href="#szamok_gyoke">Számok ,n' gyöke</a></li>
+                                <li><a class="dropdown-item" href="#logaritmus_azonossagai">Logaritmus azonosságai</a></li>
+                                <li><a class="dropdown-item" href="#fuggvenyek">Függvények</a></li>
+                                <li><a class="dropdown-item" href="#oszthatosag">Oszthatóság, számelmélet alapjai</a></li>
+                                <li><a class="dropdown-item" href="#primszamok">Prímszámok, a számelmélet alapelve</a></li>
+                                <li><a class="dropdown-item" href="#lko_lkt">Legnagyobb közös osztó, legkisebb közös többszörös</a></li>
+                                <li><a class="dropdown-item" href="#vektorok">Vektorok</a></li>
+                                <li><a class="dropdown-item" href="#kor_egyenlete">A kör egyenlete</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Programozási nyelvek</a>
+                            <ul class="dropdown-menu dropdown-menu-dark scrollable-menu">
+                                <li><a class="dropdown-item disabled" href="php.html">PHP</a></li>
+                                <li><a class="dropdown-item" href="html.html">HTML</a></li>
+                                <li><a class="dropdown-item" href="css.html">CSS</a></li>
+                                <li><a class="dropdown-item disabled" href="javascript.html">JavaScript</a></li>
+                                <li><a class="dropdown-item" href="python.html">Python</a></li>
+                                <li><a class="dropdown-item disabled" href="java.html">Java</a></li>
+                                <li><a class="dropdown-item disabled" href="c.html">C</a></li>
+                                <li><a class="dropdown-item disabled" href="c#.html">C#</a></li>
+                                <li><a class="dropdown-item disabled" href="c++.html">C++</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="git.html">Git</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="mysql.html">MySQL</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="mongodb.html">MongoDB</a>
+                    </ul>
+                </div>
+                <input type="search" onkeypress="Search()" placeholder="Keresés" id="keres">
+            </div>
+        </nav>
+
+        <div class="container backgrund">
+
+            <h3 id="masodfoku_egyenlet">Másodfokú egyenlet képlet</h3>
+
+                <p><b>x<sub>1,2</sub> = <span class="unli">-b ± √<span class="upli">b<sup>2</sup> -4ac</span></span> <br><span style="padding-left: 90px;"></span>2a</b></p>
+
+            <hr>
+
+            <h3 id="trigonometria">Trigonometria</h3>
+                <p>A sinust, cosinust, tangenst és pitagoras tételt csak derékszögű háromszögnél lehet használni.</p>
+
+                <h5>Pitagorasz tétel</h5>
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6">
+                            <img src="css/fix-photo/sin cos.png" alt="Sinus" class="img-thumbnail" width="100%">
+                        </div>
+                        <div class="col-md-8 col-sm-6">
+                            <p>a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup></p>
+                            <p>sin<sup>2</sup>α + cos<sup>2</sup>α = 1</p>
+                        </div>
+                    </div>
+
+                <h5>Terület számítás</h5>
+                    <h6>Alap képletek</h6>
+                        <p><b>T = <span class="unli">  c * m  </span> <br><span style="padding-left: 48px;">2</span></b></p>
+                        <p><b>T = <span class="unli">  a * b  </span> <br><span style="padding-left: 48px;">2</span></b></p>
+                        <p><b>T = s * r</b></p>
+                    <h6>Terület számítás sinussal</h6>
+                        <p><b>T = <span class="unli">  b * c * sin α  </span> <br><span style="padding-left: 73px;">2</span></b></p>
+                    <h6>Heron képlet</h6>
+                        <p><b>T = √<span class="upli">s *(s-a)(s-b)(s-c)</span></b></p>
+                        <p><b>s = <span class="unli">a + b + c</span> <br><span style="padding-left: 56px;"></span>2</b></p>
+                        
+                <h5>Magasságtétel</h5>
+                    <p style="line-height: 35px;"><img src="css/fix-photo/magastetel.png" alt="Magasságtétel" class="img-thumbnail" width="250px"></p>
+                    <p><b>m=√<span class="upli">p*q</span>ㅤvagyㅤm<sup>2</sup>=p*q</b></p>
+
+                <h6>Befogótételek</h6>
+                    <p><b>b=√<span class="upli">p*c</span>ㅤvagyㅤb<sup>2</sup>=p*cㅤvagyㅤb<sup>2</sup>=p*(p+q)</b></p>
+                    <p><b>a=√<span class="upli">q*c</span>ㅤvagyㅤa<sup>2</sup>=q*cㅤvagyㅤa<sup>2</sup>=q*(q+p)</b></p>
+
+                <h5>A szögfüggvények bevezetése</h5>
+                    <p>Derékszögű háromszögben az α hegyesszög szinuszának nevezzük a szöggel szemközti befogó és az átfogó hosszának hányadosát. Jelölése: sin α.</p>
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6">
+                            <img src="css/fix-photo/sin cos.png" alt="Sinus" class="img-thumbnail" width="100%">
+                        </div>
+                        <div class="col-md-8 col-sm-6">
+                            <p>sin α = <span class="unli">  a  </span> <br><span style="padding-left: 61px;">c</span></p>
+                            <p>sin β = <span class="unli">  b  </span> <br><span style="padding-left: 60px;">c</span></p>
+                        </div>
+                    </div>
+                    <p>Derékszögű háromszögben az α hegyesszög koszinuszának nevezzük a szög melletti befogó és az átfogó hányadosátt. Jelölése: cos α.</p>
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6">
+                            <img src="css/fix-photo/sin cos.png" alt="Sinus" class="img-thumbnail" width="100%">
+                        </div>
+                        <div class="col-md-8 col-sm-6">
+                            <p>cos α = <span class="unli">  b  </span> <br><span style="padding-left: 65px;">c</span></p>
+                            <p>cos β = <span class="unli">  a  </span> <br><span style="padding-left: 64px;">c</span></p>
+                        </div>
+                    </div>
+                    <p>Derékszögű háromszögben az α hegyesszög tangensének nevezzük a szöggel szemközti befogó és a szög melletti befogó hosszának hányadosát. Jelölése: tan α.</p>
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6">
+                            <img src="css/fix-photo/sin cos.png" alt="Sinus" class="img-thumbnail" width="100%">
+                        </div>
+                        <div class="col-md-8 col-sm-6">
+                            <p>tan α = <span class="unli">  a  </span> <br><span style="padding-left: 63px;">b</span></p>
+                            <p>tan β = <span class="unli">  b  </span> <br><span style="padding-left: 63px;">a</span></p>
+                        </div>
+                    </div>
+                    <p>A sinus és cosinus értékének mindig 0,x-nek kell lennie és ebből számítjuk ki a szöget.</p>
+                    <p>A tangest érték lehet lehet 1 fölötto amiből számoljuk ki a szöget.</p>
+                
+                <h5>Összefüggések a hegyesszögek szögfüggvényei között</h5>
+                    <div>
+                        <img src="css/fix-photo/sin cos table.png" alt="Sin/Cos táblázat" class="img-thumbnail" width="400px">
+                    </div>
+                    <p>tan α = <span class="unli">  sin α  </span> <br><span style="padding-left: 60px;">cos α</span></p>
+
+                <hr>
+
+                <p>Tetszőleges háromszögben érvényes a trigonometrikus területképlet:</p>
+                <div class="row">
+                    <div class="col-md-4 col-sm-6">
+                        <img src="css/fix-photo/tetszoleges_haromszog.png" alt="Háromszög" class="img-thumbnail" width="100%">
+                    </div>
+                    <div class="col-md-8 col-sm-6">
+                        <p>t =<span class="unli">  a * b * sin γ  </span> <br><span style="padding-left: 63px;">2</span></p>
+                        <p>t =<span class="unli">  a * c * sin β  </span> <br><span style="padding-left: 63px;">2</span></p>
+                        <p>t =<span class="unli">  b * c * sin α  </span> <br><span style="padding-left: 63px;">2</span></p>
+                    </div>
+                </div>
+
+                <h5>Szinusztétel</h5>
+                    <p>a : b : c = sin α : sin β : sin γ (A szokásos jelöléseket használva)</p>
+                    <p>Bármely háromszögben az oldalak hosszának aránya megegyezik az oldalakkal szemközti szögek szinuszainak arányával.</p>
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6">
+                            <img src="css/fix-photo/szinusztetel.png" alt="Háromszög" class="img-thumbnail" width="100%">
+                        </div>
+                        <div class="col-md-8 col-sm-6">
+                            <p>a:b:c = sin α : sin β : sin γ</p>
+                            <p>2R = <span class="unli">ㅤaㅤ</span>=<span class="unli">ㅤbㅤ</span>=<span class="unli">ㅤcㅤ</span> <br><span style="padding-left: 40px;">sin α</span><span style="padding-left: 20px;">sin β</span><span style="padding-left: 20px;">sin γ</span></p>
+                        </div>
+                    </div>
+                    <h6>Levezetés:</h6>
+                        <div class="row">
+                            <div class="col-md-4 col-sm-6">
+                                <img src="css/fix-photo/szinusztetel_levezetes.png" alt="Háromszög" class="img-thumbnail" width="100%">
+                            </div>
+                            <div class="col-md-8 col-sm-6">
+                                <p>a : b : c = 2R sin a : 2R sin b : 2R sin c = sin a : sin b : sin c</p>
+                            </div>
+                        </div>
+
+                <h5>Cosinustétel</h5>
+                    <p>Bármely háromszögben c<sup>2</sup>=a<sup>2</sup>+b<sup>2</sup>-2ab*cos γ. (A szabályos jelöléseket használva)</p>
+                    <p>A szimmetrikus összefüggések: a<sup>2</sup>=c<sup>2</sup>+b<sup>2</sup>-2cb*cos α és b<sup>2</sup>=c<sup>2</sup>+a<sup>2</sup>-2ca*cos β</p>
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6">
+                            <img src="css/fix-photo/szinusztetel.png" alt="Háromszög" class="img-thumbnail" width="100%">
+                        </div>
+                        <div class="col-md-8 col-sm-6">
+                            <p>c<sup>2</sup>=a<sup>2</sup>+b<sup>2</sup>-2ab*cos γ</p>
+                            <p>a<sup>2</sup>=c<sup>2</sup>+b<sup>2</sup>-2cb*cos α</p>
+                            <p>b<sup>2</sup>=c<sup>2</sup>+a<sup>2</sup>-2ca*cos β</p>
+                        </div>
+                    </div>
+                    <h6>Levezetés:</h6>
+                        <div class="row">
+                            <div class="col-md-4 col-sm-6">
+                                <img src="css/fix-photo/szinusztetel_levezetes.png" alt="Háromszög" class="img-thumbnail" width="100%">
+                            </div>
+                            <div class="col-md-8 col-sm-6">
+                                <p>m<sub>c</sub>-re írjunk fel két féle pitagoras tételt:</p>
+                                <p>m<sub>c</sub><sup>2</sup>=b<sup>2</sup>-q<sup>2</sup></p>
+                                <p>m<sub>c</sub><sup>2</sup>=a<sup>2</sup>-(c-q<sup>2</sup>)</p>
+                                <p>b<sup>2</sup>-q<sup>2</sup>=a<sup>2</sup>-(c-q)<sup>2</sup></p>
+                                <p>a<sup>2</sup>=b<sup>2</sup>-q<sup>2</sup>+(c-q)<sup>2</sup></p>
+                                <p>a<sup>2</sup>=b<sup>2</sup>-q<sup>2</sup>+c<sup>2</sup>-2cq+q<sup>2</sup></p>
+                                <p>a<sup>2</sup>=b<sup>2</sup>+c<sup>2</sup>-2cq</p>
+                                <p>a<sup>2</sup>=b<sup>2</sup>+c<sup>2</sup>-2cb*cos α</p>
+                            </div>
+                        </div>
+
+                <h5>Háromszögbe és köré rajzolt kör</h5>
+                    <p>Minden háromszögbe és háromszög köré szerkeszthető körvonal. Ha a háromszögbe szerkeszted, akkor belülről érinti minhárom oldalt.</p>
+                    <p>Ezt a szögfelezőkkel tudjuk megcsinálni.</p>
+                    <p>A háromszög köré rajzolt kör pedig áthalad háromszög mindhárom csúcsán, ezt oldalfelező merőlegessel tudjuk megcsinálni.</p>
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6">
+                            <img src="css/fix-photo/haromszog_kor.png" alt="Háromszög" class="img-thumbnail" width="100%">
+                        </div>
+                        <div class="col-md-8 col-sm-6">
+                            <p>t = <span class="unli">  a*b*c  </span> <br><span style="padding-left: 38px;">4*R</span></p>
+                            <p>t = r * s</p>
+                            <p>s = <span class="unli">a + b + c</span> <br><span style="padding-left: 56px;"></span>2</p>
+                        </div>
+                    </div>
+
+                <h5>Pitagorasz képlet</h5>
+                    <p>Mekkora az ,,a" oldalú szabályos háromszög magassága és területe? Egy szabályos háromszög magassága ,,m". Mekkora az oldala és területe?</p>
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6">
+                            <img src="css/fix-photo/m=.png" alt="Mennyi az ,m'?" class="img-thumbnail" width="100%">
+                        </div>
+                        <div class="col-md-8 col-sm-6">
+                            <p>m = <span class="unli">√3 * a</span> <br><span style="padding-left: 51px;">2</span></p>
+                            <p>T = <span class="unli">√3 * a<sup>2</sup></span> <br><span style="padding-left: 45px;">4</span></p>
+                            <p>a = <span class="unli">2m</span> <br><span style="padding-left: 30px;">√3</span></p>
+                            <p>T = <span class="unli">m<sup>2</sup></span> <br><span style="padding-left: 30px;">√3</span></p>
+                        </div>
+                    </div>
+
+            <h3 id="forgasszogek_szogfuggvenyei">Forgásszögek szögfüggvényei</h3>
+                <img src="css/fix-photo/kor_1.png" alt="Egységkör" class="img-thumbnail" width="300px">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6">
+                        <img src="css/fix-photo/kor_2.png" alt="1 egység" class="img-thumbnail" width="100%">
+                    </div>
+                    <div class="col-md-8 col-sm-6">
+                        <p>sin α = <span class="unli">  y  </span>= y <br><span style="padding-left: 58px;">1</span></p>
+                        <p>cos α = <span class="unli">  x  </span>= x <br><span style="padding-left: 62px;">1</span></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-sm-6">
+                        <img src="css/fix-photo/kor_sin.png" alt="1 egység" class="img-thumbnail" width="100%">
+                    </div>
+                    <div class="col-md-8 col-sm-6">
+                        <h6>Sin:</h6>
+                        <p>az y tengelyről olvassuk le</p>
+                        <p>sin 60 = sin 120</p>
+                        <p>sin 240 = sin 300</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-sm-6">
+                        <img src="css/fix-photo/kor_cos.png" alt="1 egység" class="img-thumbnail" width="100%">
+                    </div>
+                    <div class="col-md-8 col-sm-6">
+                        <h6>Cos:</h6>
+                        <p>az x tengelyről olvassuk le</p>
+                        <p>cos 30 = cos 150</p>
+                        <p>cos 210 = cos 330</p>
+                    </div>
+                </div>
+                <p>A sinus és a cosinus függvény 360° szerint ismétlődik, ami azt jelenti, hogy 360° szerint periodikus. Ezt figyelembe kell majd venni az egyenletek megoldásánál.</p>
+                    
+                <h5>A tangens alfa és cotangens alfa általánosítás</h5>
+                    <p><span class="unli" style="margin-left: 46px;">  sin α  </span> <br>tg α = cos α  , ha α ≠ 90°+k*180°, k ∈ Z (egész szám).</p>
+                    <p>Az egységkör P(1,0) pontjába húzőtt érintőjét szokás ,tangens tengelynek' is nevezni, amelyben a pozitív irány az y tengelyével megegyező.</p>
+                    <p>A tangensnél a periódus csak 180°.</p>
+                    <img src="css/fix-photo/kor_tg.png" alt="Tangens kör" class="img-thumbnail" width="300px">
+                    <p><span class="unli" style="margin-left: 50px;">  cos α  </span> <br>ctg α = sin α  , ha α ≠ 0°+k*180°, k ∈ Z.</p>
+                    <p>A kikötésben szereplő szögek esetén a nevezőben 0 lenne, márpedig ezt nem engedhetjük meg.</p>
+                    <p>Ctg is 180° szerint periodikus.</p>
+
+                <h5>A tangens és a cotangens közti összefüggés</h5>
+                    <p>tg x = <span class="unli">  sin x  </span> <br><span style="padding-left: 50px;">cos x</span></p>
+                    <p>cotg x = <span class="unli">  cos x  </span> <br><span style="padding-left: 70px;">sin x</span></p>
+                    <p>tg x * cotg x = <span class="unli">  sin x  </span> * <span class="unli">  cos x  </span>= 1 <br><span style="padding-left: 110px;">cos x</span><span style="padding-left: 26px;">sin x</span></p>
+                    <p><b>tg x * cotg x = 1</b></p>
+
+                <h5>Függvény periódusa, maximuma, minimuma, növekvő függvény, csökkenő függvény</h5>
+                    <h6>Függvény periódusa:</h6>
+                        <p>Ha egy f függvényhez létezik egy olyan ,a' pozitív szám, hogy f(x)=f(x+a) akkor az ,a' számot a függvény periódusának nevezzük.</p>
+                        <p>pl.: sin és cos periódusa 360° vagy 2*𝝿 <br>tg és cotg periódusa 180° vagy 𝝿</p>
+
+                    <h6>Függvény maximuma:</h6>
+                        <p>A legnagyobb felvett függvényértéket a függvény maximumának nevezzük.</p>
+
+                    <h6>Függvény minimuma:</h6>
+                        <p>A legkisebb felvettffüggvényértéket a függvény minimumának nevezzük.</p>
+
+                        <p style="margin-top: 40px;">Egy függvény akkor növekvő, ha: x<sub>1</sub>&lt;x<sub>2</sub>, akkor f(x<sub>1</sub>)&lt;f(x<sub>2</sub>)</p>
+                        <img src="css/fix-photo/fuggveny_no.png" alt="Függvény" class="img-thumbnail" width="300px">
+                        <p>Egy függvény akkor csökkenő, ha: x<sub>1</sub>&lt;x<sub>2</sub>, akkor f(x<sub>1</sub>)>f(x<sub>2</sub>)</p>
+                        <img src="css/fix-photo/fuggveny_csokken.png" alt="Függvény" class="img-thumbnail" width="300px">
+                    
+                    <h5>Sin x függvén:</h5>
+                        <img src="css/fix-photo/fuggveny_sin.png" alt="Függvény" class="img-thumbnail" width="600px">
+                        <p>A sin függvény maximuma 1, amit a 𝝿/2 +k*2𝝿 helyen vesz fel, 90°+k*360°.</p>
+                        <p>A sin függvény minimuma -1, amit a  3𝝿/2 +k*2𝝿 helyen vesz fel 270°+k*360°.</p>
+                        <p>k az egész szám: -3, -2, -1, 0, 1, 2, 3</p>
+                        <p>periódus: 360° vagy 2𝝿</p>
+                        <p>növekvő: [-90°+k*360°; 90°+k*360°]</p>
+                        <p>csökkenő: [90°+k*360°; 270°+k*360°]</p>
+
+                    <h5>Cos x függvény:</h5>
+                        <img src="css/fix-photo/fuggveny_cos.png" alt="Függvény" class="img-thumbnail" width="600px">
+                        <p>A cos függvény maximuma 1 az x=k*2𝝿 helyen (k ∈ Z)</p>
+                        <p>A cos függvény minimuma -1 az x=𝝿+k*2𝝿 helyen (k ∈ Z)</p>
+                        <p>periódus: 360° vagy 2𝝿</p>
+                        <p>szigorúan monoton növekvő: [𝝿+k*𝝿; 2𝝿+k*2𝝿]</p>
+                        <p>szigorúan monoton csökkenő: [k*2𝝿; 𝝿+k*2𝝿]</p>
+
+                    <h5>Tan x függvény:</h5>
+                        <p><span class="unli" style="margin-left: 60px;">  sin α  </span> <br>A tg α = cos α  definíció alapján tg x nem értelmezett, ha cos x = 0, azaz x=𝝿/2 +k*𝝿, k ∈ Z.</p>
+                        <img src="css/fix-photo/fuggveny_tan.png" alt="Függvény" class="img-thumbnail" width="600px">
+                        <p>A függvény jellemzése:</p>
+                        <ol type="1" class="in">
+                            <li>D<sub>f</sub>={x∈R, x≠𝝿/2 +k*𝝿, k∈Z}</li>
+                            <li>R<sub>f</sub>=R</li>
+                            <li>A függvény periodikus, periódusa 𝝿.</li>
+                            <li>A függvénynek se minumuma, se maximuma nincs.</li>
+                            <li>A függvény páratlan függvény, mert tg x = -tg(-x).</li>
+                            <li>Szigorúan monoton nő pl.: -3𝝿/2 -től -𝝿/2 -ig; 3𝝿/2 -től 5𝝿/2 -ig</li>
+                            <li>Zérushelye k*𝝿.</li>
+                        </ol>
+
+                    <h5>Cotan x függvény:</h5>
+                        <p><span class="unli" style="margin-left: 66px;"> cos α </span> <br>A ctg α = sin α  definíció alapján ctg x nem értelmezett, ha sin x = 0, azaz x=k*𝝿, k ∈ Z.</p>
+                        <img src="css/fix-photo/fuggveny_cotan.png" alt="Függvény" class="img-thumbnail" width="600px">
+                        <p>A függvény jellemzése:</p>
+                        <ol type="1" class="in">
+                            <li>D<sub>f</sub>={x∈R, x≠k*𝝿, k∈Z}</li>
+                            <li>R<sub>f</sub>=R</li>
+                            <li>A függvény periodikus, periódusa 𝝿.</li>
+                            <li>A függvénynek se minumuma, se maximuma nincs.</li>
+                            <li>A függvény páratlan függvény, mert ctg x = -ctg(-x).</li>
+                            <li>Szigorúan monoton csökken pl.: -2𝝿 -től -𝝿 -ig; 𝝿 -től 2𝝿 -ig</li>
+                            <li>Zérushelye: x=𝝿/2 +k*𝝿, k∈Z</li>
+                        </ol>
+
+                    <h5>Páros és páratlan függvények</h5>
+                        <div class="row">
+                            <div class="col-md-4 col-sm-6">
+                                <img src="css/fix-photo/fuggveny_U.png" alt="Függvény" class="img-thumbnail" width="100%">
+                            </div>
+                            <div class="col-md-8 col-sm-6">
+                                <h6>Páros függvény:</h6>
+                                <p>Mindig az y tengely szerint szimmetrikus</p>
+                                <p>x<sup>2</sup>, a hatvány páros szám</p>
+                                <p>x<sup>2</sup>=(-x)<sup>2</sup></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 col-sm-6">
+                                <img src="css/fix-photo/fuggveny_I.png" alt="Függvény" class="img-thumbnail" width="100%">
+                            </div>
+                            <div class="col-md-8 col-sm-6">
+                                <h6>Páratlan függvény:</h6>
+                                <p>Mindig az origo szerint szimmetrikus</p>
+                                <p>2x<sup>1</sup>, a hatvány páratlan szám</p>
+                                <p>2x=-2(-x)</p>
+                            </div>
+                        </div>
+                        <p>Sin: páratlan</p>
+                        <p>Cos: páros</p>
+                        <p>Tg: páratlan</p>
+                        <p>Ctg: páratlan</p>
+
+                    <h5>Trigonometriai egyenletek</h5>
+                        <p>sin<sup>2</sup>x + cos<sup>2</sup>x = 1</p>
+                        <p>tg x * ctg x = 1</p>
+
+            <hr>
+
+            <h3 id="kombinatorika">Kombinatorika</h3>
+                <h5>Permutáció</h5>
+                    <p>Ha adott ,n' elemet minden lehetséges módon sorrendbe rakunk, akkor permutációról beszélünk. Ha az összes elem különböző akkor ismétlés nélküli permutációról beszélünk.</p>
+                    <p>pl.: Hány lehetséges módon lehet egymás mellé letenni a piros, sárga, zöld és kék színt?</p>
+                    <p class="space"><b>n!</b> = 4! = 4 * 3 * 2 * 1 = 24</p>
+                    <p>Ha az elemek között vannak azonosak, akkor ismétléses permutációról beszélünk.</p>
+                    <p>pl.: A MATIKA szó betűiből hány szót lehet kirakni?</p>
+                    <p><b><span class="unli">ㅤㅤㅤn!ㅤㅤㅤ</span></b> = <span class="unli">ㅤ6!ㅤ</span> = <span class="unli">  720  </span> = 360 <br><b>ism.1! * ism.2!</b><span style="padding-left: 40px;"></span>2!<span style="padding-left: 53px;"></span>2</p>
+                    <p>ism. = ismétlődő</p>
+
+                <h5>Variáció</h5>
+                    <p>Ha ,n' különböző elem közül minden lehetséges módon kiválasztunk ,k' elemet úgy, hogy a sorrend is fontos, akkor variációról beszélünk.</p>
+                    <p>pl.: Futóversenyen futnak 8-an. Hányféle képpen végezhetnek az 1., 2. és 3. helyen?</p>
+                    <p class="space"><b><span class="unli">ㅤn!ㅤ</span> </b>= <span class="unli">   8!   </span> = <span class="unli">  8!  </span> = <span class="unli">8 * 7 * 6 * <s>5!</s></span> = 8 * 7 * 6 = 336 <br><b>(n-k)!</b><span style="padding-left: 21px;"></span>(8-3)!<span style="padding-left: 25px;"></span>5!<span style="padding-left: 61px;"></span><s>5!</s></p>
+                    <p>Abban az esetben, ha ismétlődés lehetséges, vagy ugyanaz az elem többször fordulhat elő és a sorrend is számít, akkor ismétléses variációról beszélünk.</p>
+                    <p>pl.: Egy pénzdarabbal 3 dobást végzünk. Hányféle dobássorozat lehetséges, ha a dobások sorrendjét nem vesszük figyelembe?</p>
+                    <p><span style="padding-left: 25px;"></span>(A pénzérmének 2 oldala van)</p>
+                    <p><b>n<sup>k</sup></b> = 2<sup>3</sup> = 8</p>
+
+                <h5>Kombináció</h5>
+                    <p>Ha ,n' különböző elem közül szeretnénk kiválasztani ,k' elemet, de az elemek sorrendjére nem vagyunk tekintettel, akkor kombinációról beszélünk.</p>
+                    <p>pl.: 8 kártyalap közül hány féle képpen húzhatunk ki 5-öt, ha a sorrendet nem vesszük figyelembe?</p>
+                    <p class="space"><span class="fst-italic">olvasd: ,n' alatt a ,k'ㅤ</span><b><span style="font-size: x-large;">(<sup>n</sup><sub>k</sub>)</span> = <span class="unli">    ㅤn!    ㅤ</span></b> = <span style="font-size: x-large;">(<sup>8</sup><sub>5</sub>)</span> = <span class="unli">ㅤㅤ8!ㅤㅤ</span> = <span class="unli">ㅤ8!ㅤ</span> = <span class="unli"> 8 * 7 *<span style="text-decoration: line-through #404040;"> 6 </span>* <s>5!</s> </span> = 56 <br><b><span style="padding-left: 210px;"></span>k! * (n-k)!</b><span style="padding-left: 78px;"></span>5! * (8-5)!<span style="padding-left: 28px;"></span>5! * 3!<span style="padding-left: 23px;"></span><s>5!</s> *<span style="text-decoration: line-through #404040;"> 3 * 2 </span>* 1</p>
+                    <p>Sorrend nem számít, de lehet ismétlődés is.</p>
+                    <p>pl.: Négy db 5 forintossal hány különböző dobás lehetséges, ha a sorrend nem számít és ismétlődhet?</p>
+                    <p><b><span style="font-size: x-large;">(<sup>n +</sup><sub>k</sub><sup>k - 1</sup>)</span></b></p>
+                    <p>A lehetséges esetek száma: fej, írás (2)</p>
+                    <p>n = 2</p>
+                    <p>Hányszor végezzük el: 4 dobás</p>
+                    <p>k = 4</p>
+                    <p><span style="font-size: x-large;">(<sup>n +</sup><sub>k</sub><sup>k - 1</sup>)</span> = <span style="font-size: x-large;">(<sup>2 +</sup><sub>4</sub><sup>4 - 1</sup>)</span> = <span style="font-size: x-large;">(<sup>5</sup><sub>4</sub>)</span> = <span style="font-size: x-large;">(<sup>n</sup><sub>k</sub>)</span> = <span class="unli">ㅤ5!ㅤ</span> = 5 <br><span style="padding-left: 337px;"></span>4!</p>
+
+            <hr>
+
+            <h3 id="valoszinuseg_szamitas">Valószínűség számítás</h3>
+                <p>Olyan jelenségekkel foglalkozik, amelyek azonos körülmények között többször is megimételhető.</p>
+                <p>pl.: Mennyi az esélye hogy egy kockával pont hatot dobunk?</p>
+                <p><b>p = <span class="unli">  k  </span> <br><span style="padding-left: 35px;"></span>n</b></p>
+                <p>k = kedvező esetek száma (1 db, amikor 6-os)</p>
+                <p>n = lehetséges esetek száma (6db, amennyi a kocka oldala)</p>
+                <p>p = <span class="unli">  1  </span> = 0,16 * 100 = 16,6% az esélye, hogy pont 6-ost dobunk. <br><span style="padding-left: 35px;">6</span></p>
+            
+            <hr>
+
+            <h3 id="statisztika">Statisztika</h3>
+                <p>Statisztika az elvégzett mérések re alapozva különféle tulajdonságokat vizsgál.</p>
+                <p>Egy adat gyakoriságán azt a számot értjük, ahányszor az adat a mintában előfordul.</p>
+                <p>Egy adat relatív gyakoriságán a gyakoriság és a minta elemszámának hányadosát értjük.</p>
+                <p>A relatív gyakoriság százalékban kifejezett értékét százalékos gyakoriságnak nevezzük.</p>
+                <p>pl.: Az osztályba 21 tanuló jár. A dolgozatra 5-öst 3-an kaptak, 4-est 6-an, 3-ast 5-en, 2-est 3-an és 1-est 4-en.</p>
+                <p><span style="padding-left: 25px;"></span>Készítsünk táblázatot ezekből az adatokból és használkuk fel a következő kifejezéseket is.</p>
+                <table class="table table-striped-columns bg-white w-50" style="margin-left: 30px;">
+                    <tr class="text-center">
+                        <th style="width: 20%;" class="align-bottom">osztályzat</th>
+                        <th style="width: 20%;" class="align-bottom">abszolút gyakoriság</th>
+                        <th style="width: 30%;" class="align-bottom">relatív gyak.</th>
+                        <th style="width: 30%;" class="align-bottom">százalékos gyak.</th>
+                    </tr>
+                    <tr class="text-center">
+                        <td style="width: 20%">5</td>
+                        <td style="width: 20%;">3</td>
+                        <td style="width: 30%;">0,14</td>
+                        <td style="width: 30%;">14%</td>
+                    </tr>
+                    <tr class="text-center">
+                        <td style="width: 20%">4</td>
+                        <td style="width: 20%;">6</td>
+                        <td style="width: 30%;">0,28</td>
+                        <td style="width: 30%;">28%</td>
+                    </tr>
+                    <tr class="text-center">
+                        <td style="width: 20%">3</td>
+                        <td style="width: 20%;">5</td>
+                        <td style="width: 30%;">0,23</td>
+                        <td style="width: 30%;">23%</td>
+                    </tr>
+                    <tr class="text-center">
+                        <td style="width: 20%">2</td>
+                        <td style="width: 20%;">3</td>
+                        <td style="width: 30%;">0,14</td>
+                        <td style="width: 30%;">14%</td>
+                    </tr>
+                    <tr class="text-center">
+                        <td style="width: 20%">1</td>
+                        <td style="width: 20%;">4</td>
+                        <td style="width: 30%;">0,19</td>
+                        <td style="width: 30%;">19%</td>
+                    </tr>
+                </table>
+                <p>minta elemszáma: gyakoriság Σ = 21</p>
+                <p>Σ = szumma (összeg)</p>
+                <p>Az adatokból gyakran grafikont kell készíteni. A leggyakoribb grafikon az oszlopdiagram és kördiagram. Készítsük el az előző feladat oszlopdiagramját.</p>
+                <p><img src="css/fix-photo/statisztika_diagram.png" alt="Oszlopdiagram" class="img-thumbnail" width="400px"></p>
+                <p>A mintában leggyakrabban előforduló adatot a minta móduszának nevezzük. Módusz lehet több is. </p>
+                <p>5-ös 3db, 4-es 6db, 3-as 5db, 2-es 3db és 1-es 4db</p>
+                <p>módusz: 4</p>
+                <p>A minta nagyság szerint rendezett adatai közül a középsőt mediánnak nevezzük.</p>
+                <p>Páratlan számú adatnál mindig a középső, páros számnál pedig a két középső adat számtani közepe.</p>
+                <p>555444444333332221111 ami közül a középső 5554444443[3]3332221111</p>
+                <p>medián: 3</p>
+                <p>A számtani közép vagy más néven aritmetikai átlagot úgy számoljuk ki, hogy összeadjuk az adatokat és elosztjuk a darabszámmal.</p>
+                <p><span class="unli">5*3+4*6+3*5+2*3+1*4</span> = <span class="unli">  64  </span> = 3,05 <br> <span style="padding-left: 75px;"></span>21<span style="padding-left: 98px;"></span>21</p>
+                <p>számtani közép: 3,05</p>
+                <p>A minta terjedelme a legnagyobb és a legkisebb elem különbsége.</p>
+                <p>5-1</p>
+                <p>minta terjedelme: 4</p>
+                <p>A minta adatainak a számtani közepétől való átlagos négyzetes eltérését szórásnégyzetnek nevezzük.</p>
+                <p><span class="unli" style="font-size: smaller;">(5-3,05)<sup>2</sup>*3+(4-3,05)<sup>2</sup>*6+(3-3,05)<sup>2</sup>*5+(2-3,05)<sup>2</sup>*3+(1-3,05)<sup>2</sup>*4</span> = <br> <span style="font-size: smaller; padding-left: 170px;">21</span></p>
+                <p>= <span class="unli">36.95</span> <br><span style="padding-left: 25px;"></span>21</p>
+                <p>szórásnégyzet: 1,76</p>
+                <p>Ha ebből a szórásnégyzetból gyököt vonunk, akkor megkapjuk a szórást.</p>
+                <p>√<span class="upli">1,76</span></p>
+                <p>szórás: 1,33</p>
+
+            <h3 id="fuggvenyek_tulajdonsagai">Függvények tulajdonságai</h3>
+                <p>Az értelmezési tartományt könnyebb meghatározni, mivel csak azt kell megvizsgálni, hogy mikor nincs értelme. Ha ezt sikerült, akkor az összes valós számból le kell vonni azt amikor nincs értelme. A törtnek akkor nincs értelme, ha a nevező 0.</p>
+                <p>A zérushelyet úgy kell megatározni, hogy a lehető legegyszerűbb alakra hozzuk a függvényt kiemeléssel, egyszerüsítéssel, majd az eredményt egyenlővé tesszük nullával. Egy tört akkor nulla, ha a számláló nulla. Minden tényezőt meg kell vizsgálni.</p>
+
+            <h3 id="nevezetes_azonossagok">Nevezetes azonosságok</h3>
+                <p>(a±b)<sup>2</sup> = a<sup>2</sup> ± 2ab + b<sup>2</sup></p>
+                <p>(a±b)<sup>3</sup> = a<sup>3</sup> ± 2ab<sup>2</sup> + 2a<sup>2</sup>b ± b<sup>3</sup></p>
+                <p>(-a-b)<sup>2</sup> = (-a)<sup>2</sup> + 2(-a)(-b) + (-b)<sup>2</sup></p>
+                <p>(a+b)(a-b) = a<sup>2</sup> - b<sup>2</sup></p>
+                <p>(a+b)(a<sup>2</sup>-ab+b<sup>2</sup>) = a<sup>3</sup> + b<sup>3</sup></p>
+                <p>(a-b)(a<sup>2</sup>+ab+b<sup>2</sup>) = a<sup>3</sup> - b<sup>3</sup></p>
+                
+            <h3 id="egesz_kitevoju_hatvanyok">Egész kitevőjű hatványok, azonosságok</h3>
+                <p>a<sup>m</sup> * a<sup>n</sup> = a<sup>m+n</sup></p>
+                <p>(a * b)<sup>n</sup> = a<sup>n</sup> * b<sup>n</sup></p>
+                <p><span class="unli">a<sup>m</sup></span> = a<sup>m-n</sup> <br>a<sup>n</sup></p>
+                <p><span style="font-size: large;">(<sup>a</sup>/<sub>b</sub>)</span><sup>n</sup> = <span class="unli">a<sup>n</sup></span> <br><span style="padding-left: 60px;">b<sup>n</sup></span></p>
+                <p>(a<sup>n</sup>)<sup>m</sup> = a<sup>n*m</sup></p>
+
+            <h3 id="szamok_gyoke">Számok ,n' gyöke</h3>
+                <p>(√a)<sup>2</sup> = a, a≥0</p>
+                <p><sup>n</sup>√<span class="upli">a*b</span>=<sup>n</sup>√a *<sup>n</sup>√b</p>
+                <p><sup>n</sup>√<span class="upli">a/b</span>=<span class="unli"><sup>n</sup>√a</span> <br><span style="padding-left: 50px;"><sup>n</sup>√b</span></p>
+                <p><sup>n</sup>√<span class="upli"><sup>m</sup>√a</span>=<sup>n*m</sup>√a</p>
+                <p><sup>n</sup>√<span class="upli">a<sup>m</sup></span>=a<sup>n/m</sup></p>
+                <p>(<sup>n</sup>√a)<sup>m</sup>=<sup>n</sup>√<span class="upli">a<sup>m</sup></span></p>
+                <p><sup>n</sup>√a <br>Ha ,n' páratlan, akkor gyök alatt lehetséges negatív szám, mivel egy negatív szám páratlan hatványa is negatív. <br>Ha ,n' páros, akkor gyök alatt nem lehetséges negatív szám, mivel egy negatív szám páros hatványa pozitív.</p>                
+
+            <h3 id="logaritmus_azonossagai">Logaritmus azonosságai</h3>
+                <h5>Szorzat logaritmusa</h5>
+                    <p>log<sub>a</sub>(x*y)=log<sub>a</sub>x+log<sub>a</sub>y</p>
+                <h5>Hányados logaritmusa</h5>
+                    <p>log<sub>a</sub><span class="unli"> x </span>=log<sub>a</sub>x-log<sub>a</sub>y <br><span style="padding-left: 32px;">y</span></p>
+                <h5>Hatvány logaritmusa</h5>
+                    <p>log<sub>a</sub>b<sup>k</sup>=k*log<sub>a</sub>b</p>
+                <h5>n-edik gyök logaritmusa</h5>
+                    <p>log<sub>a</sub><sup>n</sup>√b=<span class="unli">log<sub>a</sub>b</span> <br><span style="padding-left: 80px;">n</span></p>
+                <h5>Áttérés tízes alapú logaritmusra</h5>
+                    <p>log<sub>a</sub>b=<span class="unli">log<sub>10</sub>b</span>=<span class="unli">lg b</span> <br><span style="padding-left: 50px;">log<sub>10</sub>a</span><span style="padding-left: 13px;">lg a</span></p>
+
+            <h3 id="fuggvenyek">Függvények</h3>
+                <h5>Hatványfüggvény:</h5>
+                <img src="css/fix-photo/hatvanyfuggveny.png" alt="Hatványfüggvény" class="img-thumbnail" width="500px">
+                <h5>Négyzetgyökfüggvény:</h5>
+                <img src="css/fix-photo/gyokfuggveny.png" alt="Négyzetgyökfüggvény" class="img-thumbnail" width="500px">
+                <h5>Exponenciális függvény:</h5>
+                <img src="css/fix-photo/exponencialisfuggveny.png" alt="Exponenciális függvény" class="img-thumbnail" width="500px">
+                <h5>Logaritmusfüggvény:</h5>
+                <img src="css/fix-photo/logfuggveny.png" alt="Logaritmusfüggvény" class="img-thumbnail" width="500px">
+
+            <h3 id="oszthatosag">Oszthatóság, számelmélet alapjai</h3>
+                <h5>A maradékos osztás</h5>
+                    <p>Bármely ,a' természetes számhoz és ,b' pozitív egész számhoz található olyan negatív ,q' és ,r' egész szám, amelyre <b>a=b*q+r</b>, ahol <b>0≤r&lt;b</b>. A ,q' számot hányadosnak, az ,r' számot maradéknak nevezzük.</p>
+                <h5>Oszthatóság fogalma</h5>
+                    <p>Ha az ,a' és ,b' természetes számhoz található olyan ,q' természetes szám, melyre <b>a=b*q</b>, akkor azt mondhatjuk, hogy ,a' osztható ,b'-vel vagy ,b' osztója ,a'-nak. <br>Így jelöljük: <b>b|a</b></p>
+                <h5>Oszthatósági szabályok</h5>
+                    <p>Egy szám akkor osztható 2-vel, ha páros.</p>
+                    <p>Egy szám akkor osztható 3-mal, ha a számjegyeinek az összege osztható 3-mal.</p>
+                    <p>Egy szám akkor osztható 4-gyel, ha utolsó két számjegye osztható 4-gyel.</p>
+                    <p>Egy szám akkor osztható 5-tel, ha utolsó számjegye 0 vagy 5.</p>
+                    <p>Egy szám akkor osztható 6-tal, ha osztható 2-vel és 3-mal is.</p>
+                    <p>Egy szám akkor osztható 8-cal, ha utolsó három számjegye osztható 8-cal.</p>
+                    <p>Egy szám akkor osztható 9-cel, ha számjegyeinek összege osztható 9-cel.</p>
+                    <p>Egy szám akkor osztható 10-zel, ha utolsó számjegye 0.</p>
+                    <p>Egy szám akkor osztható 12-vel, ha oszható 4-gyel és 3-mal is.</p>
+                    <p>Egy szám akkor osztható 25-tel, ha utolsó két számjegye osztható 25-tel.</p>
+                    <p>Egy szám akkor osztható 100-zal, ha utolsó két számjegye 0.</p>
+
+            <h3 id="primszamok">Prímszámok, a számelmélet alapelve</h3>
+                <p>Prímszámok azok a pozitív egész számok, amelyeknek pontosan két különböző osztójuk van. Az 1 nem prímszám, mert nem két különböző osztója van. A legelső prímszám a 2. Ez az egyedüli prímszám. Ami nem prímzám az össszetett szám. Végtelensok prímszám van.</p>
+                <h5>A számelmélet alaptétele</h5>
+                    <p>Bármely összetett szám felbontható prímszámok szorzatára. A felbontás a prímszámok sorrendjétől eltekintve egyértelmű. (Bárhogyis sikerül a felbontást elvégezni, mindig ugyanarra az eredményre jutunk.)</p>
+                    <p>Ha egy pozitív egész sikerül prímszámok szorzatára felbontani, majd hatványalakba felírni, akkor abból az alakból rögtön felírható a pozitív egész szám osztóinak a száma: A=p<sub>1</sub><sup>α<sub>1</sub></sup>*p<sub>2</sub><sup>α<sub>2</sub></sup>*p<sub>3</sub><sup>α<sub>3</sub></sup>...p<sub>n</sub><sup>α<sub>n</sub></sup>(prímszámos felbontás hatványalakba)</p>
+                    <p>Pozitív egész osztóinak a száma (α<sub>1</sub>+1)*(α<sub>2</sub>+1)*(α<sub>3</sub>+1)...(α<sub>n</sub>+1)</p>
+            
+            <h3 id="lko_lkt">Legnagyobb közös osztó, legkisebb közös többszörös</h3>
+                <h5>A legnagyobb közös osztó előállítható a következő módon</h5>
+                    <p>A számok prímfelbontása után a közös prímtényezőket az előforduló legkisebb közös hatványon összeszorozzuk. Jelölése: (a;b). (Néha kiírjuk a rövidítést is: lnko(a;b).)</p>
+                <h5>A legkisebb közös többszörös előállítható a következő módon</h5>
+                    <p>A számok prímfelbontása után minden prímtényezőből az előforduló legnagyobb hatványúakat szorozzuk össze. Jelölése: [a;b]. (néha kiírjuk a rövidítést: lkkt(a;b).)</p>
+                    <p>Két szám legnagyobb közös osztójának és legkisebb közös többszörösének szorzata egyenlő a két szám szorzatával: (a,b)*[a,b]=a*b </p>
+
+            <h3 id="vektorok">Vektorok</h3>
+                <p>Fizikában két féle mennyiség ismert. Egyik a skaláris mennyiség, a másik meg a vektormennyiség. A kettő között az a különbség, hogy a skaláris mennyiségnek csak nagysága van. Például tömeg, sűrűség, idő, hőmérséklet.</p>
+                <p>A vektromennyiségeknek a nagyság mellett irányuk is van. Például sebesség, erő, forgatónyomaték, gyorsulás. A vektorokat nyilakkal ábrázoljuk. A nyíl nagysága fogja mutatni a vektoroknak a nagyságát, az iránya pedig a vektoroknak az irányát. A vektorokat másnéven irányított szakaszoknak is hívjuk.</p>
+                <p>Két vektor egyenlő, ha nagysága és iránya egyenlő.</p>
+                <p>A=(a<sub>1</sub>;a<sub>2</sub>)</p>
+                <p>|a&#8407;|=|AB|</p>
+                <img src="css/fix-photo/egyenlo_vektor.png" alt="Egyenlő vektorok" height="150px" class="img-thumbnail">
+                <p>Az ellentett vektorok nagyságai ugyanakkorák, csak ellentett irányúak.</p>
+                <img src="css/fix-photo/ellentett_vektorok.png" alt="Ellentett vektorok" height="200px" class="img-thumbnail">
+
+                <h5>Műveletek vektorokkal</h5>
+                    <p>1. Azonos irány:</p>
+                    <img src="css/fix-photo/azonos_vektor.png" alt="Azonos irányú vektorok" class="img-thumbnail">
+                    <p>2. Ellentétes irány:</p>
+                    <img src="css/fix-photo/ellentetes_vektor.png" alt="Ellentétes vektorok" class="img-thumbnail">
+                    <p>3. Paralelogramma szabály:</p>
+                    <img src="css/fix-photo/osszead_vektor.png" alt="Vektorok összeadása" class="img-thumbnail">
+                    <div class="row">
+                        <div class="col-md-5 col-sm-12">
+                            <img src="css/fix-photo/kivon_vektor.png" alt="Vektorok kivonása" class="img-thumbnail" width="400px">
+                        </div>
+                        <div class="col-md-7 col-sm-12">
+                            <p>a-b=a+(-b)</p>
+                            <p>Kivonásnál az a+(-b) képletet használjuk. A vektrorok iránya a kissebítendő felé megy a kivonandó felől.</p>
+                        </div>
+                    </div>
+                    <p>Legyen adott az ,a' vektor és egy λ valós szám.</p>
+                        <ol type="a" class="in">
+                            <li>Ha a≠0, akkor az ,a' vektor és a λ szám szorzata az a vektor, amelynek abszolút értéke |λ|*|a| és
+                            <br>λ>0 esetén iránya az ,a' vektor irányával megegyező; 
+                            <br>λ&gt;0 esetén iránya az ,a' vektor irányával ellentétes;
+                            <br>λ=0 esetén λa=0, így iránya tetszőleges.</li>
+                            <li>Ha a=0, akkor λa=0.</li>
+                        </ol>
+                    <p>a&#8407;=a<sub>1</sub>*i+a<sub>2</sub>*j</p>
+                    <p>b&#8407;=b<sub>1</sub>*i+b<sub>2</sub>*j</p>
+                    <p>a&#8407;+b&#8407;=(a<sub>1</sub>+b<sub>1</sub>)*i+(a<sub>2</sub>+b<sub>2</sub>)*j</p>
+                    <p>a&#8407;-b&#8407;=(a<sub>1</sub>-b<sub>1</sub>)*i+(a<sub>2</sub>-b<sub>2</sub>)*j</p>
+                    <p><b>Vektor hossza:</b></p>
+                    <p>|a&#8407;|=√<span class="upli">a<sub>1</sub><sup>2</sup>+a<sub>2</sub><sup>2</sup></span></p>
+
+                <h5>Vektorok a koordinátasíkon, helyvektorok</h5>
+                    <p>Az egyértelmű vektorfelbontás tétele: <br>Ha adottak az ,a' és ,b' nem párhuzamos vektorok, akkor bármoly, velük egysíkú ,v' vektor egyértelműen felbontható az adott vektorokkal párhuzamos összetevőkre, azaz egyértelműen felírható <br>v=αa+βb <br>alakban, ahol α∈R, és β∈R.</p>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                            <img src="css/fix-photo/A(5;2).png" alt="Koordináta rendszerben vektor" class="img-thumbnail" width="300px">
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <p>v=α*a+*b+*c</p>
+                            <p>a=5*i+2*j</p>
+                            <p>Az ,i' és ,j' vektorokat bázisvektoroknak nevezzük.</p>
+                        </div>
+                    </div>
+                    <p><img src="css/fix-photo/AB.svg" alt="AB" width="20px">=B-A</p>
+
+                <h5>Vektorok számszorosának koordinátái</h5>
+                    <p>a&#8407;=a<sub>1</sub>*i+a<sub>2</sub>*j</p>
+                    <p>k*a&#8407;=k*a<sub>1</sub>*i+k*a<sub>2</sub>*j</p>
+                    <p>a&#8407;*b&#8407;=|a&#8407;|*|b&#8407;|*cos α</p>
+                    <p>a<sub>1</sub>*b<sub>1</sub>+a<sub>2</sub>*b<sub>2</sub>=√<span class="upli">a<sub>1</sub><sup>2</sup>+a<sub>2</sub><sup>2</sup></span> * √<span class="upli">b<sub>1</sub><sup>2</sup>+b<sub>2</sub><sup>2</sup></span> * cos α</p>
+                    <p>Abban az esetben, ha a skaláris szorzat 0, a két vektor mindig merőleges egymásra, vagyis az α=90°.</p>
+
+                <h5>Az egyenesmeghatározó adatok a koordinátarendszerben</h5>
+                    <p>A lineáris függvénnyel kezdjük, majd megmutatjuk, hogy a lineáris függvényből hogyan olvasható ki egy egyenesnek az adatai.</p>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                            <p>Lineáris függvény:</p>
+                            <p>f:y=x-7</p>
+                            <p>vagy f(x)=x-7</p>
+                            <p>A grafikonja mindig egyenes.</p>
+                            <p>Írjuk át a következő alakba:</p>
+                            <p>y=x-7<br>x-y=7</p>
+                            <p>Ebből az egyenletből kiolvasható az egyenes normálvektora.</p>
+                            <p>x-y=7 <br>n&#8407;(1;-1)</p>
+                            <p>Az egyenes normálvektora mindig merőleges az egyenesre.</p>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <img src="css/fix-photo/vektor_normalvektora.png" alt="Koordináta rendszerben vektor" class="img-thumbnail" width="300px">
+                        </div>
+                    </div>
+                    <p>a*x+b*y=c</p>
+                    <p>n&#8407;(a;b)</p>
+                    <p>(x;y) az egyenesen lévő pont koordinátái.</p>
+
+                <h5>Az egyenes irányvektora</h5>
+                    <p>Az egyenes irányvektora az egyenessel párhuzamos vektor. Jele: v&#8407;</p>
+                    <img src="css/fix-photo/vektor_iranyvektora.png" alt="Irányvektor" class="img-thumbnail" width="300px">
+
+                <h5>Két egyenes párhuzamossága és merőlegessége</h5>
+                    <p>Két egyenes akkor párhuzamos egymásssal, ha irányvektoraik, illetve normálvektoraik egymásnak valahányszorosai.</p>
+                    <p>Két egyenes akkor merőleges egymásra, ha irányvektoraik és normálvektoraik skaláris szorzata 0.</p>
+                    
+                <h5>Az egyenes irányszöge és iránytangense</h5>
+                    <div class="row">
+                        <div class="col-md-3 col-sm-12">
+                            <img src="css/fix-photo/iranyszog.png" alt="Egyenes irányszöge" class="img-thumbnail" width="300px">
+                        </div>
+                        <div class="col-md-9 col-sm-12">
+                            <p>Az egyenes irányszögének tangensét az egyenes iránytangensének vagy meredekségének nevezzük, ezért ,m' betűvel jelöljük.</p>
+                            <p>m=tg α</p>
+                            <p>0°<α<90°</p>
+                            <p>0°<β<90°</p>
+                            <p>Legegyszerűbben az irányvektorból tudjuk meghatározni.</p>
+                            <p>tg α=<span class="unli">  y  </span> <br><span style="padding-left: 47px;">x</span></p>
+                        </div>
+                    </div>
+                    <p>Legyen az egyenles egyenlete:</p>
+                    <p>2x-3y=15</p>
+                    <p>m=tg α = 2/3 = 0,66</p>
+                    <p>n&#8407;(2;-3) v&#8407;(3;2) α=33,69°</p>
+                    <p>Ez azt jelenti, hogy a 2x-3y=15 egyenletű egyenes az ,x' tengellyel 33,69°-os szöget zár be.</p>
+                    <p>A meredekségére úgy is rá lehet jönni, hogy a 2x-3y=15-ből kifejezzük az ,y'-t:</p>
+                    <p>2x-3y=15</p>
+                    <p>-3y=15-2x</p>
+                    <p>y=-5+<span class="unli">  2x  </span> <br><span style="padding-left: 55px;">3</span></p>
+                    <p>y=<span class="unli">  2x  </span>-5 <br><span style="padding-left: 30px;">3</span></p>
+
+                <h5>Pont és egyenes távolsága</h5>
+                    <div class="row">
+                        <div class="col-md-3 col-sm-12">
+                            <img src="css/fix-photo/pont_egyenes_tavolsaga.png" alt="Pont és egyenes távolsága" class="img-thumbnail" width="300px">
+                        </div>
+                        <div class="col-md-9 col-sm-12">
+                            <p>Határozzuk meg a ,P' pont távolságát az ,e' egyenestől.</p>
+                            <p>Ezeket a feladatokat úgy kell megoldani, hogy a ,P' ponton keresztül húzunk egy merőleges ehyenest az ,e' egyenesre.</p>
+                            <p>Ez az egyenes legyen az ,f' egyenes.</p>
+                            <p>Meg kell határozni az ,e' és az ,f' metszéspontját, ami legyen az ,M' pont.</p>
+                            <p>Majd végül meg kell határozni az ,M' és ,P' pont távolságát.</p>
+                        </div>
+                    </div>
+                    <p>,e' egyenes egyenlete: <br>x-2y=4 <br>n&#8407;(1;-2)</p>
+                    <p>,f' egyenes egyenlete: <br>ax+by=c <br>n&#8407;(2;1) <br>2*3+1*6=c <br>c=12 <br>2x+y=12</p>
+                    <p>x-2y=4 <br>2x+y=12</p>
+                    <p>x-2y=4 <br>4x+2y=24</p>
+                    <p>5x=28</p>
+                    <p>x=5,6</p>
+                    <p>5,6-2y=4</p>
+                    <p>-2y=-1,6</p>
+                    <p>y=0,8</p>
+                    <p>M(5,6;0,8)</p>
+                    <p>M-P=(2,6;-5,2)</p>
+                    <p>távolság: 5,81</p>
+
+            <h3 id="kor_egyenlete">A kör egyenlete</h3>
+                <div class="row">
+                    <div class="col-md-3 col-sm-12">
+                        <img src="css/fix-photo/kor_egyenlet.png" alt="A kör egyenlete" class="img-thumbnail" width="300px">
+                    </div>
+                    <div class="col-md-9 col-sm-12">
+                        <p>Írjuk fel a KP szakasz nagyságát.</p>
+                        <p>KP=P-K=(x-u;y-v)</p>
+                        <p>|KP|=√<span class="upli">(x-u)<sup>2</sup>+(y-v)<sup>2</sup></span></p>
+                        <p>|KP|<sup>2</sup>=(x-u)<sup>2</sup>+(y-v)<sup>2</sup></p>
+                        <p>r<sup>2</sup>=(x-u)<sup>2</sup>+(y-v)<sup>2</sup></p>
+                        <p>(x-u)<sup>2</sup>+(y-v)<sup>2</sup>=r<sup>2</sup></p>
+                    </div>
+                </div>
+                <p>Ez azt jelenti, hogy:</p>
+                <ul>
+                    <li>(x;y) - körvonal tetszőleges pontja</li>
+                    <li>(u;v) - körvonal középpontja</li>
+                    <li>r - körvonal sugara</li>
+                </ul>
+                
+                <h5>Kör és egyenes kölcsönös helyzete</h5>
+                    <p>A körnek és az egyenesnek 3 különböző helyzete létezik:</p>
+                    <div class="row">
+                        <div class="col-md-4 col-sm-12">
+                            <img src="css/fix-photo/kor_egyenes_1.png" alt="A kör egyenlete" class="img-thumbnail" width="300px">
+                            <p>nincs közös pont</p>
+                        </div>
+                        <div class="col-md-4 col-sm-12">
+                            <img src="css/fix-photo/kor_egyenes_2.png" alt="A kör egyenlete" class="img-thumbnail" width="300px">
+                            <p>1 közös pont van</p>
+                        </div>
+                        <div class="col-md-4 col-sm-12">
+                            <img src="css/fix-photo/kor_egyenes_3.png" alt="A kör egyenlete" class="img-thumbnail" width="300px">
+                            <p>2 közös pont van</p>
+                        </div>
+                    </div>
+                    <p>Ezeket a feladatokat úgy oldjuk meg, hogy felírjuk a kör egyenletét és az egyenes egyenletéből kifejezzük valamelyik ismeretlent, majd behelyettesítjük a kör egyenletébe.</p>
+                    <p>Megoldjuk a kör egyenletét. Másodfokú egyenletet kapunk, aminek a megoldásait visszahelyettesítjük az egyenes egyenletébe.</p>
+                    <p>Ha a gyök alatt negatív szám van és negatív számból gyököt vonni nem lehet, ezért nincs közös pontjuk.</p>
+
+        </div>
+
+    </body>
+
+</html>
